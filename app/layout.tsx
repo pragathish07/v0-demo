@@ -44,7 +44,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${geist.variable} ${manrope.variable} ${playfair.variable} ${dancing.variable} antialiased`}
+      className={`${geist.variable} ${manrope.variable} ${playfair.variable} ${dancing.variable} antialiased scroll-smooth`}
     >
       <body className="font-sans min-h-screen floating-shapes">
         <div className="fixed inset-0 overflow-hidden pointer-events-none z-0">
