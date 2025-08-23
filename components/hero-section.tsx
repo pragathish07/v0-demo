@@ -27,15 +27,15 @@ export function HeroSection() {
       ref={heroRef}
       className="relative min-h-screen flex items-center overflow-hidden bg-gradient-to-br from-background via-primary/5 to-accent/10"
     >
-      <div className="absolute inset-0 overflow-hidden">
+      <div className="absolute inset-0 overflow-hidden z-0">
         <div className="absolute -top-40 -right-40 w-80 h-80 bg-primary/20 rounded-full blur-3xl animate-pulse"></div>
         <div className="absolute -bottom-40 -left-40 w-96 h-96 bg-accent/15 rounded-full blur-3xl animate-pulse delay-1000"></div>
         <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-secondary/10 rounded-full blur-2xl animate-bounce delay-500"></div>
       </div>
 
-      <div className="container mx-auto px-4 py-16 relative z-10">
+      <div className="container mx-auto px-4 py-16 relative z-20">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
-          <div className="space-y-8 animate-fade-in-up">
+          <div className="space-y-8 animate-fade-in-up z-30 relative">
             <div className="space-y-4">
               <div className="inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-medium animate-fade-in-down delay-300">
                 <Star className="w-4 h-4 fill-current" />
@@ -105,9 +105,9 @@ export function HeroSection() {
             </div>
           </div>
 
-          <div className="relative animate-fade-in-right delay-600" ref={imageRef}>
+          <div className="relative animate-fade-in-right delay-600 z-30" ref={imageRef}>
             {/* Main hero image */}
-            <div className="relative z-10 rounded-2xl overflow-hidden shadow-2xl">
+            <div className="relative z-40 rounded-2xl overflow-hidden shadow-2xl transform hover:scale-105 transition-transform duration-700">
               <img
                 src="/elegant-spa-woman.png"
                 alt="Beautiful woman in spa setting"
@@ -116,26 +116,26 @@ export function HeroSection() {
               <div className="absolute inset-0 bg-gradient-to-t from-primary/20 via-transparent to-transparent"></div>
             </div>
 
-            <div className="absolute -top-6 -left-6 bg-white rounded-xl p-4 shadow-lg animate-float">
+            <div className="absolute -top-6 -left-6 bg-white rounded-xl p-4 shadow-lg animate-float z-50 hover:shadow-xl transition-shadow duration-300">
               <div className="flex items-center gap-2">
                 <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
                 <span className="text-sm font-medium">500+ Transformations</span>
               </div>
             </div>
 
-            <div className="absolute -bottom-6 -right-6 bg-white rounded-xl p-4 shadow-lg animate-float delay-1000">
+            <div className="absolute -bottom-6 -right-6 bg-white rounded-xl p-4 shadow-lg animate-float delay-1000 z-50 hover:shadow-xl transition-shadow duration-300">
               <div className="text-center">
-                <div className="text-2xl font-bold text-primary">98%</div>
+                <div className="text-2xl font-bold text-primary animate-pulse">98%</div>
                 <div className="text-xs text-muted-foreground">Success Rate</div>
               </div>
             </div>
 
-            <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-sm rounded-lg p-3 shadow-lg animate-fade-in delay-1500">
+            <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-sm rounded-lg p-3 shadow-lg animate-fade-in delay-1500 z-50 hover:bg-white transition-colors duration-300">
               <div className="flex gap-2">
-                <div className="w-12 h-16 bg-muted rounded overflow-hidden">
+                <div className="w-12 h-16 bg-muted rounded overflow-hidden transform hover:scale-110 transition-transform duration-300">
                   <img src="/woman-before-sculpting.png" alt="Before" className="w-full h-full object-cover" />
                 </div>
-                <div className="w-12 h-16 bg-muted rounded overflow-hidden">
+                <div className="w-12 h-16 bg-muted rounded overflow-hidden transform hover:scale-110 transition-transform duration-300">
                   <img src="/woman-after-contouring.png" alt="After" className="w-full h-full object-cover" />
                 </div>
               </div>
