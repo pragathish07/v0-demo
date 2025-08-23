@@ -42,24 +42,24 @@ export function Navbar() {
           : "bg-gradient-to-r from-white/10 via-primary/5 to-white/10 backdrop-blur-sm"
       }`}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-18 lg:h-22">
           <div className="flex-shrink-0 group">
             <div className="text-2xl lg:text-3xl font-bold cursor-pointer font-heading">
-              <span className="text-foreground group-hover:text-primary transition-colors duration-300">Body</span>
+              <span className="text-foreground group-hover:text-primary transition-colors duration-300 script-text">Md</span>
               <span className="text-transparent bg-gradient-to-r from-primary via-accent to-purple-600 bg-clip-text animate-pulse script-text text-3xl lg:text-4xl ml-1">
-                Sculpt
+                BodySculpt
               </span>
             </div>
             <div className="h-0.5 w-0 bg-gradient-to-r from-primary to-accent group-hover:w-full transition-all duration-500"></div>
           </div>
 
-          <div className="hidden lg:flex items-center space-x-8">
+          <div className="hidden lg:flex items-center space-x-8 ml-12">
             {navItems.map((item, index) => (
               <a
                 key={item.name}
                 href={item.href}
-                className="text-foreground hover:text-primary transition-all duration-300 font-semibold relative group py-2 px-3 text-base whitespace-nowrap"
+                className="text-foreground hover:text-primary transition-all duration-300 font-semibold relative group py-2 px-3 text-lg whitespace-nowrap"
                 style={{ animationDelay: `${index * 100}ms` }}
               >
                 <span className="relative z-10">{item.name}</span>
@@ -69,20 +69,20 @@ export function Navbar() {
             ))}
           </div>
 
-          <div className="hidden lg:flex items-center space-x-4">
+          <div className="hidden lg:flex items-center space-x-4 ml-12">
             <a
-              href="tel:+1234567890"
-              className="flex items-center text-foreground hover:text-primary transition-all duration-300 group bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full border border-primary/20 hover:border-primary/40"
-            >
-              <Phone className="w-4 h-4 mr-2 group-hover:animate-bounce" />
-              <span className="font-semibold text-sm">(123) 456-7890</span>
-            </a>
+                href="tel:+1234567890"
+                className="flex items-center text-foreground hover:text-primary transition-all duration-300 group bg-white/10 backdrop-blur-sm px-8 py-2 rounded-full border border-primary/20 hover:border-primary/40"
+              >
+                <Phone className="w-4 h-4 mr-2 group-hover:animate-bounce flex-shrink-0" />
+                <span className="font-semibold text-lg whitespace-nowrap">(123) 456-7890</span>
+              </a>
             <Button
-              className={`bg-gradient-to-r from-primary to-accent hover:from-primary/90 hover:to-accent/90 text-white px-8 py-3 text-base rounded-full font-bold transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl border-2 border-transparent hover:border-white/20 relative overflow-hidden group ${
+              className={`bg-gradient-to-r from-primary to-accent text-white px-12 py-6 text-lg rounded-full font-bold transition-all duration-300 hover:scale-105 shadow-lg  border-2 border-transparent relative overflow-hidden group cursor-pointer${
                 shouldShake ? "animate-shake-rotate" : ""
               }`}
             >
-              <div className="absolute inset-0 bg-gradient-to-r from-purple-600/20 to-pink-600/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              
               <Sparkles className="w-4 h-4 mr-2 animate-pulse" />
               Book Consultation
             </Button>

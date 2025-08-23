@@ -16,7 +16,7 @@ export function Footer() {
   const quickLinks = ["About Us", "Our Team", "Before & After Gallery", "Testimonials", "Blog", "Contact Us"]
 
   return (
-    <footer className="bg-foreground text-background">
+    <footer className="p-6 bg-foreground text-background">
       <div className="container mx-auto px-4">
         {/* Main Footer Content */}
         <div className="py-16">
