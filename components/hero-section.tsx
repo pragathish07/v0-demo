@@ -75,10 +75,18 @@ export function HeroSection() {
             <div className="flex flex-col sm:flex-row gap-4 animate-fade-in-up delay-1100">
               <Button
                 size="lg"
+                asChild
                 className="text-lg px-8 py-6 bg-gradient-to-r from-primary to-accent hover:from-primary/90 hover:to-accent/90 text-white shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 group"
               >
-                Book FREE Consultation
-                <Play className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform duration-300" />
+                <a
+                  href="https://book.squareup.com/appointments/2eb02510-65db-4773-9466-ebc2bf742d77/location/93THKJBR99KWV/services"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2"
+                >
+                  Book FREE Consultation
+                  <Play className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
+                </a>
               </Button>
               <Button
                 variant="outline"

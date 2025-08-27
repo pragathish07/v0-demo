@@ -117,10 +117,18 @@ export function ServicesSection() {
           <Button
             size="lg"
             variant="outline"
+            asChild
             className="px-8 py-6 text-lg bg-transparent hover:bg-primary hover:text-white transition-all duration-300 hover:scale-105 group"
           >
-            Learn More About Our Treatments
-            <Sparkles className="w-5 h-5 ml-2 group-hover:rotate-12 transition-transform duration-300" />
+            <a
+              href="https://book.squareup.com/appointments/2eb02510-65db-4773-9466-ebc2bf742d77/location/93THKJBR99KWV/services"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2"
+            >
+              Book Your Consultation
+              <Sparkles className="w-5 h-5 group-hover:rotate-12 transition-transform duration-300" />
+            </a>
           </Button>
         </div>
       </div>

@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
-import { Smartphone, Calendar, TrendingUp, Bell, Download } from "lucide-react"
+import { Smartphone, Calendar, TrendingUp, Bell, ExternalLink } from "lucide-react"
 
 export function AppPromotionSection() {
   const appFeatures = [
@@ -115,24 +115,21 @@ export function AppPromotionSection() {
               })}
             </div>
 
-            {/* Download Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4 pt-4">
+            <div className="pt-4">
               <Button
                 size="lg"
-                className="flex items-center gap-3 bg-foreground text-background hover:bg-foreground/90"
+                asChild
+                className="bg-gradient-to-r from-primary to-accent hover:from-primary/90 hover:to-accent/90 text-white px-8 py-6 text-lg font-bold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
               >
-                <Download className="w-5 h-5" />
-                <div className="text-left">
-                  <div className="text-xs">Download on the</div>
-                  <div className="text-sm font-semibold">App Store</div>
-                </div>
-              </Button>
-              <Button size="lg" variant="outline" className="flex items-center gap-3 bg-transparent">
-                <Download className="w-5 h-5" />
-                <div className="text-left">
-                  <div className="text-xs">Get it on</div>
-                  <div className="text-sm font-semibold">Google Play</div>
-                </div>
+                <a
+                  href="https://mdbodysculpting.repeatmd.app/signin"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-3"
+                >
+                  <ExternalLink className="w-5 h-5" />
+                  Get Access
+                </a>
               </Button>
             </div>
           </div>

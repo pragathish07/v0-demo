@@ -4,11 +4,14 @@ import { SpecialOfferSection } from "@/components/special-offer-section"
 import { ServicesSection } from "@/components/services-section"
 import { ResultsGallery } from "@/components/results-gallery"
 import { TestimonialsSection } from "@/components/testimonials-section"
+import { AboutUsSection } from "@/components/about-us-section"
 import { AppPromotionSection } from "@/components/app-promotion-section"
-import { BookingSection } from "@/components/booking-section"
+import { GiftPromoSection } from "@/components/gift-promo-section"
+import { BookAppointmentSection } from "@/components/book-appointment-section"
 import { FaqSection } from "@/components/faq-section"
 import { LocationSection } from "@/components/location-section"
 import { Footer } from "@/components/footer"
+import { AppPopup } from "@/components/app-popup"
 
 export default function HomePage() {
   return (
@@ -23,17 +26,20 @@ export default function HomePage() {
       </div>
       <ResultsGallery />
       <TestimonialsSection />
+      <div id="about">
+        <AboutUsSection />
+      </div>
       <div id="membership">
         <AppPromotionSection />
       </div>
+      <GiftPromoSection />
       <div id="payment">
-        <BookingSection />
+        <BookAppointmentSection />
       </div>
-      <div id="about">
-        <FaqSection />
-      </div>
+      <FaqSection />
       <LocationSection />
       <Footer />
+      <AppPopup />
     </main>
   )
 }

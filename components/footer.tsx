@@ -24,24 +24,25 @@ export function Footer() {
             {/* Company Info */}
             <div className="space-y-6">
               <div>
-                <h3 className="text-2xl font-bold mb-2">Transform Body Sculpting</h3>
+                <h3 className="text-2xl font-bold mb-2">MD Body Sculpting</h3>
                 <p className="text-background/80 leading-relaxed">
-                  Miami's premier non-surgical body contouring clinic. Advanced treatments, expert care, real results.
+                  Maryland's premier non-surgical body contouring clinic. Advanced treatments, expert care, real
+                  results.
                 </p>
               </div>
 
               <div className="space-y-3">
                 <div className="flex items-center gap-3">
                   <Phone className="w-5 h-5 text-accent" />
-                  <span className="text-background/90">(555) 123-4567</span>
+                  <span className="text-background/90">(410) 505-8595</span>
                 </div>
                 <div className="flex items-center gap-3">
                   <Mail className="w-5 h-5 text-accent" />
-                  <span className="text-background/90">info@bodysculpting.com</span>
+                  <span className="text-background/90">mdbodysculpting@outlook.com</span>
                 </div>
                 <div className="flex items-center gap-3">
                   <MapPin className="w-5 h-5 text-accent" />
-                  <span className="text-background/90">123 Wellness Ave, Miami, FL 33101</span>
+                  <span className="text-background/90">3525 Ellicott Mills Dr, Ellicott City, MD 21043, USA</span>
                 </div>
               </div>
 
@@ -129,7 +130,7 @@ export function Footer() {
         {/* Bottom Footer */}
         <div className="py-8">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <div className="text-background/80 text-sm">© 2024 Transform Body Sculpting. All rights reserved.</div>
+            <div className="text-background/80 text-sm">© 2024 MD Body Sculpting. All rights reserved.</div>
             <div className="flex gap-6 text-sm">
               <a href="#" className="text-background/80 hover:text-accent transition-colors">
                 Privacy Policy
@@ -153,7 +154,7 @@ export function Footer() {
               towards your transformation.
             </p>
             <Button size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground px-8 py-6 text-lg">
-              Book Free Consultation Now
+              Book Appointment Now
             </Button>
           </div>
         </div>
