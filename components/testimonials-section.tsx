@@ -13,52 +13,58 @@ export function TestimonialsSection() {
   const testimonials = [
     {
       id: 1,
-      name: "Sarah Johnson",
-      age: 34,
-      location: "Miami, FL",
-      treatment: "Cryotherapy + Skin Tightening",
+      name: "Shelly Johnson",
+      location: "Maryland",
+      treatment: "Cryotherapy",
       rating: 5,
-      avatar: "/placeholder.svg?height=60&width=60&text=SJ",
-      review:
-        "I was skeptical about non-surgical treatments, but the results speak for themselves! After just 3 sessions, I lost 4 inches around my waist and my skin feels so much tighter. The staff was incredibly professional and made me feel comfortable throughout the entire process. I would definitely recommend this clinic to anyone looking for real results without surgery.",
-      date: "2 weeks ago",
+      review: "Received a cryotherapy and saw results just from the first treatment. The employees are very knowledgeable, friendly, and professional. They gave their recommendations for treatment and I couldn't be happier. Can't wait to see the results when all of my treatments have been completed.",
+      date: "6 months ago",
     },
     {
       id: 2,
-      name: "Maria Rodriguez",
-      age: 29,
-      location: "Los Angeles, CA",
-      treatment: "HIFU Fat Reduction",
+      name: "Tina Tran Steinhardt",
+      location: "Maryland", 
+      treatment: "Personalized Body Sculpting",
       rating: 5,
-      avatar: "/placeholder.svg?height=60&width=60&text=MR",
-      review:
-        "As a busy mom of two, I didn't have time for lengthy recovery periods. This clinic offered exactly what I needed - effective treatments with no downtime. The HIFU treatment helped me get rid of stubborn belly fat that wouldn't budge despite diet and exercise. I'm thrilled with my results and feel confident in my body again!",
-      date: "1 month ago",
+      review: "I had an incredible experience with Maryland Body Sculpting. From the moment I walked in, Karen made me feel so comfortable and at ease. She genuinely cares about finding treatments that are tailored to your personal goals, and she took the time to explain everything thoroughly.",
+      date: "10 months ago",
     },
     {
       id: 3,
-      name: "Jennifer Chen",
-      age: 42,
-      location: "New York, NY",
-      treatment: "Full Body Contouring",
+      name: "Katie H.",
+      location: "Maryland",
+      treatment: "Thermalift Treatments",
       rating: 5,
-      avatar: "/placeholder.svg?height=60&width=60&text=JC",
-      review:
-        "After having three children, I thought I'd never get my pre-baby body back. The comprehensive body contouring program here changed everything. Not only did I lose inches, but my skin is firmer and I feel like myself again. The team created a personalized plan that worked perfectly for my lifestyle and goals.",
-      date: "3 weeks ago",
+      review: "I have been for the equivalent of 2 thermalift treatments. My face is so much less aged in appearance. I also lost the dreaded under neck fat. Each time the staff is friendly and the atmosphere is clean. Not a stuffy or intimidating environment at all.",
+      date: "1 year ago",
     },
     {
       id: 4,
-      name: "Amanda Thompson",
-      age: 38,
-      location: "Chicago, IL",
-      treatment: "Localized Cryotherapy",
+      name: "Bemi Ukuedojor",
+      location: "Maryland",
+      treatment: "Body Sculpting",
       rating: 5,
-      avatar: "/placeholder.svg?height=60&width=60&text=AT",
-      review:
-        "I had stubborn fat pockets that just wouldn't respond to diet and exercise. The cryotherapy treatments were comfortable and I started seeing results after the first session. The best part? No surgery, no scars, and I was back to my normal routine immediately. This clinic exceeded all my expectations!",
-      date: "1 week ago",
+      review: "Happy to have found this place. Treatment rooms and waiting area is clean and comfortable. The services provided were explained well. The equipment is top notch. I'm looking forward to seeing my results.",
+      date: "9 months ago",
     },
+    {
+      id: 5,
+      name: "Kim Rodriguez",
+      location: "Maryland",
+      treatment: "Consultation & Treatment",
+      rating: 5,
+      review: "Knowledge, friendly, welcoming and spent a fair amount of time with me. I'm looking forward to future services. Sharfie and Nina were wonderful.",
+      date: "4 months ago",
+    },
+    {
+      id: 6,
+      name: "Lyn Goeke",
+      location: "Maryland",
+      treatment: "Facial Treatment",
+      rating: 5,
+      review: "This was such an enjoyable experience. The staff is enthusiastic and truly supportive as soon as you arrive for your appointment. I cannot complement enough. 5 stars + My facial was flawless. I am looking forward to returning soon.",
+      date: "6 months ago",
+    }
   ]
 
   // Auto-rotate testimonials every 5 seconds
@@ -70,44 +76,43 @@ export function TestimonialsSection() {
   }, [testimonials.length])
 
   return (
-    <section className="py-16 px-4 bg-background">
-      <div className="container mx-auto px-4">
-        <div className="text-center space-y-4 mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground">
+    <section className="py-8 sm:py-16 px-3 sm:px-4 bg-background" id="testimonials">
+      <div className="container mx-auto px-2 sm:px-4">
+        <div className="text-center space-y-3 sm:space-y-4 mb-8 sm:mb-12">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground">
             What Our <span className="text-primary">Happy Clients</span> Say
           </h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-base sm:text-xl text-muted-foreground max-w-2xl mx-auto px-2">
             Don't just take our word for it. Read real reviews from clients who have transformed their bodies with our
             treatments.
           </p>
 
           {/* Google Rating Display */}
-          <div className="flex items-center justify-center gap-4 mt-8">
+          <div className="flex items-center justify-center gap-3 sm:gap-4 mt-6 sm:mt-8">
             <div className="flex items-center gap-2">
-              <img src="/placeholder.svg?height=32&width=32&text=G" alt="Google" className="w-8 h-8" />
-              <span className="text-2xl font-bold text-foreground">4.9</span>
+              <img src="/google-color.png" alt="Google" className="w-6 h-6 sm:w-8 sm:h-8" />
+              <span className="text-xl sm:text-2xl font-bold text-foreground">4.8</span>
             </div>
             <div className="flex items-center gap-1">
               {[...Array(5)].map((_, i) => (
-                <Star key={i} className="w-6 h-6 fill-accent text-accent" />
+                <Star key={i} className="w-4 h-4 sm:w-6 sm:h-6 fill-accent text-accent" />
               ))}
             </div>
-            <div className="text-muted-foreground">
-              <span className="font-semibold text-foreground">500+</span> Google Reviews
+            <div className="text-muted-foreground text-sm sm:text-base">
+              <span className="font-semibold text-foreground">200+</span> Google Reviews
             </div>
           </div>
         </div>
 
         {/* Featured Testimonial */}
-        <div className="max-w-4xl mx-auto mb-12">
+        <div className="max-w-4xl mx-auto mb-8 sm:mb-12">
           <Card className="border-2 border-primary/10 shadow-lg">
-            <CardContent className="p-8">
-              <div className="grid md:grid-cols-3 gap-8 items-center">
+            <CardContent className="p-4 sm:p-8">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 items-center">
                 {/* Client Info */}
-                <div className="text-center space-y-4">
-                  <Avatar className="w-20 h-20 mx-auto border-4 border-primary/20">
-                    <AvatarImage src={testimonials[currentTestimonial].avatar || "/placeholder.svg"} />
-                    <AvatarFallback className="text-lg font-semibold bg-primary/10 text-primary">
+                <div className="text-center space-y-3 sm:space-y-4">
+                  <Avatar className="w-16 h-16 sm:w-20 sm:h-20 mx-auto border-4 border-primary/20">
+                    <AvatarFallback className="text-base sm:text-lg font-semibold bg-primary/10 text-primary">
                       {testimonials[currentTestimonial].name
                         .split(" ")
                         .map((n) => n[0])
@@ -115,28 +120,28 @@ export function TestimonialsSection() {
                     </AvatarFallback>
                   </Avatar>
                   <div>
-                    <h3 className="text-xl font-semibold text-foreground">{testimonials[currentTestimonial].name}</h3>
-                    <p className="text-muted-foreground">
-                      Age {testimonials[currentTestimonial].age} • {testimonials[currentTestimonial].location}
+                    <h3 className="text-lg sm:text-xl font-semibold text-foreground">{testimonials[currentTestimonial].name}</h3>
+                    <p className="text-muted-foreground text-sm sm:text-base">
+                      {testimonials[currentTestimonial].location}
                     </p>
-                    <Badge variant="secondary" className="mt-2">
+                    <Badge variant="secondary" className="mt-2 text-xs sm:text-sm">
                       {testimonials[currentTestimonial].treatment}
                     </Badge>
                   </div>
                 </div>
 
                 {/* Review Content */}
-                <div className="md:col-span-2 space-y-4">
+                <div className="md:col-span-2 space-y-3 sm:space-y-4">
                   <div className="flex items-center gap-2">
                     {[...Array(testimonials[currentTestimonial].rating)].map((_, i) => (
-                      <Star key={i} className="w-5 h-5 fill-accent text-accent" />
+                      <Star key={i} className="w-4 h-4 sm:w-5 sm:h-5 fill-accent text-accent" />
                     ))}
-                    <span className="text-sm text-muted-foreground ml-2">{testimonials[currentTestimonial].date}</span>
+                    <span className="text-xs sm:text-sm text-muted-foreground ml-2">{testimonials[currentTestimonial].date}</span>
                   </div>
 
                   <div className="relative">
-                    <Quote className="absolute -top-2 -left-2 w-8 h-8 text-primary/20" />
-                    <p className="text-foreground leading-relaxed pl-6 italic">
+                    <Quote className="absolute -top-1 sm:-top-2 -left-1 sm:-left-2 w-6 h-6 sm:w-8 sm:h-8 text-primary/20" />
+                    <p className="text-foreground leading-relaxed pl-4 sm:pl-6 italic text-sm sm:text-base">
                       {testimonials[currentTestimonial].review}
                     </p>
                   </div>
@@ -151,13 +156,13 @@ export function TestimonialsSection() {
             </CardContent>
           </Card>
 
-          {/* Testimonial Navigation Dots */}
-          <div className="flex justify-center gap-2 mt-6">
+          {/* Testimonial Navigation Dots - Smaller on mobile */}
+          <div className="flex justify-center gap-2 mt-4 sm:mt-6">
             {testimonials.map((_, index) => (
               <button
                 key={index}
                 onClick={() => setCurrentTestimonial(index)}
-                className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                className={`w-1 h-1 sm:w-1 sm:h-1 rounded-full transition-all duration-300 ${
                   index === currentTestimonial ? "bg-primary scale-125" : "bg-muted hover:bg-primary/50"
                 }`}
               />
@@ -166,15 +171,14 @@ export function TestimonialsSection() {
         </div>
 
         {/* Additional Reviews Grid */}
-        <div className="grid md:grid-cols-3 gap-6 mb-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 mb-8 sm:mb-12">
           {testimonials.slice(0, 3).map((testimonial, index) => (
             <Card key={testimonial.id} className="border border-border/50 hover:border-primary/30 transition-colors">
-              <CardContent className="p-6">
-                <div className="space-y-4">
+              <CardContent className="p-4 sm:p-6">
+                <div className="space-y-3 sm:space-y-4">
                   <div className="flex items-center gap-3">
-                    <Avatar className="w-12 h-12">
-                      <AvatarImage src={testimonial.avatar || "/placeholder.svg"} />
-                      <AvatarFallback className="bg-primary/10 text-primary text-sm">
+                    <Avatar className="w-10 h-10 sm:w-12 sm:h-12">
+                      <AvatarFallback className="bg-primary/10 text-primary text-xs sm:text-sm">
                         {testimonial.name
                           .split(" ")
                           .map((n) => n[0])
@@ -182,15 +186,15 @@ export function TestimonialsSection() {
                       </AvatarFallback>
                     </Avatar>
                     <div>
-                      <h4 className="font-semibold text-foreground">{testimonial.name}</h4>
+                      <h4 className="font-semibold text-foreground text-sm sm:text-base">{testimonial.name}</h4>
                       <div className="flex items-center gap-1">
                         {[...Array(testimonial.rating)].map((_, i) => (
-                          <Star key={i} className="w-4 h-4 fill-accent text-accent" />
+                          <Star key={i} className="w-3 h-3 sm:w-4 sm:h-4 fill-accent text-accent" />
                         ))}
                       </div>
                     </div>
                   </div>
-                  <p className="text-sm text-muted-foreground leading-relaxed line-clamp-4">{testimonial.review}</p>
+                  <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed line-clamp-3 sm:line-clamp-4">{testimonial.review}</p>
                   <Badge variant="outline" className="text-xs">
                     {testimonial.treatment}
                   </Badge>
@@ -202,9 +206,10 @@ export function TestimonialsSection() {
 
         {/* CTA */}
         <div className="text-center">
-          <Button size="lg" variant="outline" className="px-8 py-6 text-lg bg-transparent">
-            <ExternalLink className="w-5 h-5 mr-2" />
-            Read More Reviews on Google
+          <Button size="lg" variant="outline" className="px-6 sm:px-8 py-4 sm:py-6 text-sm sm:text-lg bg-transparent w-full sm:w-auto">
+            <ExternalLink className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
+            <span className="sm:inline">Read More Reviews on Google</span>
+            <span className="sm:hidden">More Reviews</span>
           </Button>
         </div>
       </div>

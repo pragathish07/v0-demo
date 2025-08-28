@@ -83,29 +83,29 @@ export function ServicesSection() {
   ]
 
   return (
-    <section ref={sectionRef} className="py-16 bg-transparent" id="services">
-      <div className="container mx-auto px-4">
+    <section ref={sectionRef} className="py-8 sm:py-16 bg-transparent" id="services">
+      <div className="container mx-auto px-3 sm:px-4">
         <div 
-          className={`header-section text-center space-y-4 mb-12 transition-all duration-800 ease-out ${
+          className={`header-section text-center space-y-3 sm:space-y-4 mb-8 sm:mb-12 transition-all duration-800 ease-out ${
             headerVisible 
               ? 'opacity-100 translate-y-0' 
               : 'opacity-0 translate-y-8'
           }`}
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground">
             Our Advanced{" "}
             <span className="text-primary animate-gradient bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
               Body Sculpting
             </span>{" "}
             Treatments
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+          <p className="text-base sm:text-xl text-muted-foreground max-w-3xl mx-auto px-2">
             Transform your body with our cutting-edge, non-surgical treatments designed to deliver real, lasting
             results.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mb-8 sm:mb-12">
           {services.map((service, index) => {
             const IconComponent = service.icon
             const isVisible = visibleCards.has(index)
@@ -124,26 +124,26 @@ export function ServicesSection() {
                   transitionDuration: '800ms'
                 }}
               >
-                <CardHeader className="text-center pb-4">
-                  <div className="mx-auto w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-all duration-300 group-hover:rotate-12 group-hover:scale-110">
-                    <IconComponent className="w-8 h-8 text-primary group-hover:scale-110 transition-transform duration-300" />
+                <CardHeader className="text-center pb-3 sm:pb-4">
+                  <div className="mx-auto w-12 h-12 sm:w-16 sm:h-16 bg-primary/10 rounded-full flex items-center justify-center mb-3 sm:mb-4 group-hover:bg-primary/20 transition-all duration-300 group-hover:rotate-12 group-hover:scale-110">
+                    <IconComponent className="w-6 h-6 sm:w-8 sm:h-8 text-primary group-hover:scale-110 transition-transform duration-300" />
                   </div>
-                  <CardTitle className="text-xl font-semibold text-foreground group-hover:text-primary transition-colors duration-300">
+                  <CardTitle className="text-lg sm:text-xl font-semibold text-foreground group-hover:text-primary transition-colors duration-300">
                     {service.title}
                   </CardTitle>
                 </CardHeader>
-                <CardContent className="space-y-4">
-                  <p className="text-muted-foreground text-sm leading-relaxed group-hover:text-foreground transition-colors duration-300">
+                <CardContent className="space-y-3 sm:space-y-4 px-4 sm:px-6 pb-4 sm:pb-6">
+                  <p className="text-muted-foreground text-xs sm:text-sm leading-relaxed group-hover:text-foreground transition-colors duration-300">
                     {service.description}
                   </p>
-                  <ul className="space-y-2">
+                  <ul className="space-y-1.5 sm:space-y-2">
                     {service.features.map((feature, featureIndex) => (
                       <li
                         key={featureIndex}
-                        className="flex items-center gap-2 text-sm group-hover:translate-x-1 transition-transform duration-300"
+                        className="flex items-center gap-2 text-xs sm:text-sm group-hover:translate-x-1 transition-transform duration-300"
                         style={{ transitionDelay: `${featureIndex * 50}ms` }}
                       >
-                        <div className="w-1.5 h-1.5 bg-accent rounded-full flex-shrink-0 group-hover:bg-primary group-hover:scale-125 transition-all duration-300" />
+                        <div className="w-1 h-1 sm:w-1.5 sm:h-1.5 bg-accent rounded-full flex-shrink-0 group-hover:bg-primary group-hover:scale-125 transition-all duration-300" />
                         <span className="text-foreground">{feature}</span>
                       </li>
                     ))}
@@ -165,10 +165,19 @@ export function ServicesSection() {
           <Button
             size="lg"
             variant="outline"
-            className="px-8 py-6 text-lg bg-transparent hover:bg-primary hover:text-white transition-all duration-300 hover:scale-105 group backdrop-blur-sm border-primary/20"
+            asChild
+            className="px-6 sm:px-8 py-4 sm:py-6 text-sm sm:text-lg bg-transparent hover:bg-primary hover:text-white transition-all duration-300 hover:scale-105 group backdrop-blur-sm border-primary/20 w-full sm:w-auto"
           >
-            Learn More About Our Treatments
-            <Sparkles className="w-5 h-5 ml-2 group-hover:rotate-12 transition-transform duration-300" />
+            <a
+              href="https://book.squareup.com/appointments/2eb02510-65db-4773-9466-ebc2bf742d77/location/93THKJBR99KWV/services"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center justify-center gap-2"
+            >
+              <span className="hidden xs:inline">Book Your Consultation</span>
+              <span className="xs:hidden">Book Consultation</span>
+              <Sparkles className="w-4 h-4 sm:w-5 sm:h-5 group-hover:rotate-12 transition-transform duration-300" />
+            </a>
           </Button>
         </div>
       </div>

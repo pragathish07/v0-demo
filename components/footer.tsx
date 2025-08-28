@@ -16,75 +16,76 @@ export function Footer() {
   const quickLinks = ["About Us", "Our Team", "Before & After Gallery", "Testimonials", "Blog", "Contact Us"]
 
   return (
-    <footer className="p-6 bg-foreground text-background">
-      <div className="container mx-auto px-4">
+    <footer className="px-3 sm:px-6 bg-foreground text-background">
+      <div className="container mx-auto px-2 sm:px-4">
         {/* Main Footer Content */}
-        <div className="py-16">
-          <div className="grid lg:grid-cols-4 md:grid-cols-2 gap-8">
+        <div className="py-8 sm:py-16">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
             {/* Company Info */}
-            <div className="space-y-6">
+            <div className="space-y-4 sm:space-y-6 col-span-1 sm:col-span-2 lg:col-span-1">
               <div>
-                <h3 className="text-2xl font-bold mb-2">Transform Body Sculpting</h3>
-                <p className="text-background/80 leading-relaxed">
-                  Miami's premier non-surgical body contouring clinic. Advanced treatments, expert care, real results.
+                <h3 className="text-xl sm:text-2xl font-bold mb-2">MD Body Sculpting</h3>
+                <p className="text-background/80 leading-relaxed text-sm sm:text-base">
+                  Maryland's premier non-surgical body contouring clinic. Advanced treatments, expert care, real
+                  results.
                 </p>
               </div>
 
-              <div className="space-y-3">
+              <div className="space-y-2 sm:space-y-3">
                 <div className="flex items-center gap-3">
-                  <Phone className="w-5 h-5 text-accent" />
-                  <span className="text-background/90">(555) 123-4567</span>
+                  <Phone className="w-4 h-4 sm:w-5 sm:h-5 text-accent flex-shrink-0" />
+                  <span className="text-background/90 text-sm sm:text-base">(410) 505-8595</span>
                 </div>
                 <div className="flex items-center gap-3">
-                  <Mail className="w-5 h-5 text-accent" />
-                  <span className="text-background/90">info@bodysculpting.com</span>
+                  <Mail className="w-4 h-4 sm:w-5 sm:h-5 text-accent flex-shrink-0" />
+                  <span className="text-background/90 text-sm sm:text-base break-all">mdbodysculpting@outlook.com</span>
                 </div>
-                <div className="flex items-center gap-3">
-                  <MapPin className="w-5 h-5 text-accent" />
-                  <span className="text-background/90">123 Wellness Ave, Miami, FL 33101</span>
+                <div className="flex items-start gap-3">
+                  <MapPin className="w-4 h-4 sm:w-5 sm:h-5 text-accent flex-shrink-0 mt-0.5" />
+                  <span className="text-background/90 text-sm sm:text-base">3525 Ellicott Mills Dr, Ellicott City, MD 21043, USA</span>
                 </div>
               </div>
 
               {/* Social Media */}
-              <div className="flex gap-4">
+              <div className="flex gap-3 sm:gap-4">
                 <Button
                   size="sm"
                   variant="outline"
-                  className="w-10 h-10 p-0 bg-transparent border-background/30 hover:bg-accent hover:border-accent"
+                  className="w-8 h-8 sm:w-10 sm:h-10 p-0 bg-transparent border-background/30 hover:bg-accent hover:border-accent"
                 >
-                  <Facebook className="w-4 h-4" />
+                  <Facebook className="w-3 h-3 sm:w-4 sm:h-4" />
                 </Button>
                 <Button
                   size="sm"
                   variant="outline"
-                  className="w-10 h-10 p-0 bg-transparent border-background/30 hover:bg-accent hover:border-accent"
+                  className="w-8 h-8 sm:w-10 sm:h-10 p-0 bg-transparent border-background/30 hover:bg-accent hover:border-accent"
                 >
-                  <Instagram className="w-4 h-4" />
+                  <Instagram className="w-3 h-3 sm:w-4 sm:h-4" />
                 </Button>
                 <Button
                   size="sm"
                   variant="outline"
-                  className="w-10 h-10 p-0 bg-transparent border-background/30 hover:bg-accent hover:border-accent"
+                  className="w-8 h-8 sm:w-10 sm:h-10 p-0 bg-transparent border-background/30 hover:bg-accent hover:border-accent"
                 >
-                  <Twitter className="w-4 h-4" />
+                  <Twitter className="w-3 h-3 sm:w-4 sm:h-4" />
                 </Button>
                 <Button
                   size="sm"
                   variant="outline"
-                  className="w-10 h-10 p-0 bg-transparent border-background/30 hover:bg-accent hover:border-accent"
+                  className="w-8 h-8 sm:w-10 sm:h-10 p-0 bg-transparent border-background/30 hover:bg-accent hover:border-accent"
                 >
-                  <Youtube className="w-4 h-4" />
+                  <Youtube className="w-3 h-3 sm:w-4 sm:h-4" />
                 </Button>
               </div>
             </div>
 
             {/* Services */}
-            <div className="space-y-6">
-              <h4 className="text-xl font-semibold">Our Services</h4>
-              <ul className="space-y-3">
+            <div className="space-y-4 sm:space-y-6">
+              <h4 className="text-lg sm:text-xl font-semibold">Our Services</h4>
+              <ul className="space-y-2 sm:space-y-3">
                 {services.map((service, index) => (
                   <li key={index}>
-                    <a href="#" className="text-background/80 hover:text-accent transition-colors">
+                    <a href="#" className="text-background/80 hover:text-accent transition-colors text-sm sm:text-base">
                       {service}
                     </a>
                   </li>
@@ -93,12 +94,12 @@ export function Footer() {
             </div>
 
             {/* Quick Links */}
-            <div className="space-y-6">
-              <h4 className="text-xl font-semibold">Quick Links</h4>
-              <ul className="space-y-3">
+            <div className="space-y-4 sm:space-y-6">
+              <h4 className="text-lg sm:text-xl font-semibold">Quick Links</h4>
+              <ul className="space-y-2 sm:space-y-3">
                 {quickLinks.map((link, index) => (
                   <li key={index}>
-                    <a href="#" className="text-background/80 hover:text-accent transition-colors">
+                    <a href="#" className="text-background/80 hover:text-accent transition-colors text-sm sm:text-base">
                       {link}
                     </a>
                   </li>
@@ -107,18 +108,18 @@ export function Footer() {
             </div>
 
             {/* Newsletter Signup */}
-            <div className="space-y-6">
-              <h4 className="text-xl font-semibold">Stay Updated</h4>
-              <p className="text-background/80">
+            <div className="space-y-4 sm:space-y-6 col-span-1 sm:col-span-2 lg:col-span-1">
+              <h4 className="text-lg sm:text-xl font-semibold">Stay Updated</h4>
+              <p className="text-background/80 text-sm sm:text-base">
                 Get exclusive offers, transformation tips, and the latest news delivered to your inbox.
               </p>
-              <div className="space-y-3">
+              <div className="space-y-2 sm:space-y-3">
                 <Input
                   type="email"
                   placeholder="Enter your email"
-                  className="bg-background/10 border-background/30 text-background placeholder:text-background/60"
+                  className="bg-background/10 border-background/30 text-background placeholder:text-background/60 text-sm sm:text-base"
                 />
-                <Button className="w-full bg-accent hover:bg-accent/90 text-accent-foreground">Subscribe Now</Button>
+                <Button className="w-full bg-accent hover:bg-accent/90 text-accent-foreground text-sm sm:text-base py-2 sm:py-3">Subscribe Now</Button>
               </div>
             </div>
           </div>
@@ -129,7 +130,7 @@ export function Footer() {
         {/* Bottom Footer */}
         <div className="py-8">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <div className="text-background/80 text-sm">© 2024 Transform Body Sculpting. All rights reserved.</div>
+            <div className="text-background/80 text-sm">© 2024 MD Body Sculpting. All rights reserved.</div>
             <div className="flex gap-6 text-sm">
               <a href="#" className="text-background/80 hover:text-accent transition-colors">
                 Privacy Policy
@@ -152,9 +153,11 @@ export function Footer() {
               Ready to achieve the body you've always wanted? Book your free consultation and take the first step
               towards your transformation.
             </p>
+          <a href="https://book.squareup.com/appointments/2eb02510-65db-4773-9466-ebc2bf742d77/location/93THKJBR99KWV/services" target="_blank">
             <Button size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground px-8 py-6 text-lg">
-              Book Free Consultation Now
+              Book Appointment Now
             </Button>
+          </a>
           </div>
         </div>
       </div>

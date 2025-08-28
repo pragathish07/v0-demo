@@ -127,6 +127,102 @@
     /* Added vibrant gradient background and enhanced styling */
     @apply text-foreground bg-gradient-to-br from-purple-50 via-white to-purple-100;
     background-attachment: fixed;
+    /* Prevent horizontal overflow on mobile */
+    overflow-x: hidden;
+  }
+
+  /* Enhanced mobile responsiveness */
+  html {
+    overflow-x: hidden;
+  }
+
+  /* Container max-width adjustments for better mobile experience */
+  .container {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+  }
+
+  @media (min-width: 480px) {
+    .container {
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
+  }
+
+  @media (min-width: 640px) {
+    .container {
+      max-width: 640px;
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+    }
+  }
+
+  @media (min-width: 768px) {
+    .container {
+      max-width: 768px;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .container {
+      max-width: 1024px;
+    }
+  }
+
+  @media (min-width: 1280px) {
+    .container {
+      max-width: 1280px;
+    }
+  }
+
+  @media (min-width: 1536px) {
+    .container {
+      max-width: 1536px;
+    }
+  }
+
+  /* Extra small breakpoint utilities */
+  @media (min-width: 375px) {
+    .xs\:block {
+      display: block;
+    }
+    .xs\:inline {
+      display: inline;
+    }
+    .xs\:hidden {
+      display: none;
+    }
+    .xs\:flex {
+      display: flex;
+    }
+    .xs\:grid {
+      display: grid;
+    }
+    .xs\:text-sm {
+      font-size: 0.875rem;
+      line-height: 1.25rem;
+    }
+    .xs\:text-base {
+      font-size: 1rem;
+      line-height: 1.5rem;
+    }
+    .xs\:px-4 {
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
+    .xs\:py-2 {
+      padding-top: 0.5rem;
+      padding-bottom: 0.5rem;
+    }
+    .xs\:w-auto {
+      width: auto;
+    }
+    .xs\:grid-cols-2 {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
   }
 
   /* Added custom animations and design elements */
@@ -247,5 +343,92 @@
   .h-screen-safe {
     height: 100vh;
     height: 100dvh;
+  }
+
+  /* Mobile-specific improvements */
+  @media (max-width: 500px) {
+    /* Ensure all text is readable on small screens */
+    body {
+      font-size: 14px;
+      line-height: 1.5;
+    }
+
+    /* Force proper box-sizing on all elements */
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+
+    /* Prevent horizontal scrolling */
+    .container, .max-w-7xl, .max-w-6xl, .max-w-5xl, .max-w-4xl, .max-w-3xl {
+      max-width: 100%;
+      padding-left: 0.75rem;
+      padding-right: 0.75rem;
+    }
+
+    /* Ensure images are responsive */
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    /* Make buttons more touch-friendly */
+    button, .btn, a[role="button"] {
+      min-height: 44px;
+      min-width: 44px;
+    }
+
+    /* Improve spacing for mobile */
+    .space-y-8 > * + * {
+      margin-top: 1.5rem;
+    }
+
+    .space-y-6 > * + * {
+      margin-top: 1rem;
+    }
+
+    .space-y-4 > * + * {
+      margin-top: 0.75rem;
+    }
+
+    /* Better mobile typography */
+    h1 {
+      font-size: 1.75rem;
+      line-height: 1.2;
+    }
+
+    h2 {
+      font-size: 1.5rem;
+      line-height: 1.3;
+    }
+
+    h3 {
+      font-size: 1.25rem;
+      line-height: 1.3;
+    }
+
+    h4 {
+      font-size: 1.125rem;
+      line-height: 1.4;
+    }
+
+    /* Mobile navigation improvements */
+    .fixed {
+      width: 100%;
+    }
+
+    /* Better mobile card layouts */
+    .grid {
+      gap: 0.75rem;
+    }
+
+    .grid-cols-1 {
+      grid-template-columns: 1fr;
+    }
+
+    /* Mobile form improvements */
+    input, textarea, select {
+      width: 100%;
+      min-height: 44px;
+    }
   }
 }

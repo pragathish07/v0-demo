@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
-import { Smartphone, Calendar, TrendingUp, Bell, Download } from "lucide-react"
+import { Smartphone, Calendar, TrendingUp, Bell, ExternalLink } from "lucide-react"
 
 export function AppPromotionSection() {
   const appFeatures = [
@@ -27,56 +27,56 @@ export function AppPromotionSection() {
   ]
 
   return (
-    <section className="py-16 bg-card">
-      <div className="container mx-auto px-4">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+    <section className="py-8 sm:py-12 lg:py-16 bg-card">
+      <div className="container mx-auto px-3 sm:px-4">
+        <div className="grid lg:grid-cols-2 gap-8 sm:gap-10 lg:gap-12 items-center">
           {/* Left Side - App Mockups */}
-          <div className="relative">
-            <div className="flex justify-center items-center gap-4">
+          <div className="relative order-2 lg:order-1">
+            <div className="flex justify-center items-center gap-2 sm:gap-4">
               {/* Phone Mockup 1 */}
               <div className="relative">
-                <div className="w-64 h-[500px] bg-foreground rounded-[2.5rem] p-2 shadow-2xl">
-                  <div className="w-full h-full bg-background rounded-[2rem] overflow-hidden">
-                    <div className="p-6 space-y-4">
+                <div className="w-40 h-80 sm:w-52 sm:h-[420px] lg:w-64 lg:h-[500px] bg-foreground rounded-[1.5rem] sm:rounded-[2rem] lg:rounded-[2.5rem] p-1.5 sm:p-2 shadow-2xl">
+                  <div className="w-full h-full bg-background rounded-[1.25rem] sm:rounded-[1.5rem] lg:rounded-[2rem] overflow-hidden">
+                    <div className="p-3 sm:p-4 lg:p-6 space-y-2 sm:space-y-3 lg:space-y-4">
                       <div className="flex items-center justify-between">
-                        <h3 className="text-lg font-semibold">Book Treatment</h3>
-                        <Badge variant="secondary">New</Badge>
+                        <h3 className="text-sm sm:text-base lg:text-lg font-semibold">Book Treatment</h3>
+                        <Badge variant="secondary" className="text-xs">New</Badge>
                       </div>
-                      <div className="space-y-3">
-                        <div className="h-12 bg-primary/10 rounded-lg flex items-center px-4">
-                          <Calendar className="w-5 h-5 text-primary mr-3" />
-                          <span className="text-sm">Select Date & Time</span>
+                      <div className="space-y-2 sm:space-y-3">
+                        <div className="h-8 sm:h-10 lg:h-12 bg-primary/10 rounded-md sm:rounded-lg flex items-center px-2 sm:px-3 lg:px-4">
+                          <Calendar className="w-3 h-3 sm:w-4 sm:h-4 lg:w-5 lg:h-5 text-primary mr-2 sm:mr-3" />
+                          <span className="text-xs sm:text-sm">Select Date & Time</span>
                         </div>
-                        <div className="h-12 bg-muted rounded-lg flex items-center px-4">
-                          <span className="text-sm text-muted-foreground">Choose Treatment</span>
+                        <div className="h-8 sm:h-10 lg:h-12 bg-muted rounded-md sm:rounded-lg flex items-center px-2 sm:px-3 lg:px-4">
+                          <span className="text-xs sm:text-sm text-muted-foreground">Choose Treatment</span>
                         </div>
-                        <div className="h-12 bg-muted rounded-lg flex items-center px-4">
-                          <span className="text-sm text-muted-foreground">Personal Details</span>
+                        <div className="h-8 sm:h-10 lg:h-12 bg-muted rounded-md sm:rounded-lg flex items-center px-2 sm:px-3 lg:px-4">
+                          <span className="text-xs sm:text-sm text-muted-foreground">Personal Details</span>
                         </div>
                       </div>
-                      <Button className="w-full bg-primary">Book Now</Button>
+                      <Button className="w-full bg-primary text-xs sm:text-sm py-2 sm:py-3">Book Now</Button>
                     </div>
                   </div>
                 </div>
               </div>
 
               {/* Phone Mockup 2 - Slightly offset */}
-              <div className="relative -ml-8 mt-8">
-                <div className="w-64 h-[500px] bg-foreground rounded-[2.5rem] p-2 shadow-2xl">
-                  <div className="w-full h-full bg-background rounded-[2rem] overflow-hidden">
-                    <div className="p-6 space-y-4">
+              <div className="relative -ml-4 sm:-ml-6 lg:-ml-8 mt-4 sm:mt-6 lg:mt-8">
+                <div className="w-40 h-80 sm:w-52 sm:h-[420px] lg:w-64 lg:h-[500px] bg-foreground rounded-[1.5rem] sm:rounded-[2rem] lg:rounded-[2.5rem] p-1.5 sm:p-2 shadow-2xl">
+                  <div className="w-full h-full bg-background rounded-[1.25rem] sm:rounded-[1.5rem] lg:rounded-[2rem] overflow-hidden">
+                    <div className="p-3 sm:p-4 lg:p-6 space-y-2 sm:space-y-3 lg:space-y-4">
                       <div className="flex items-center justify-between">
-                        <h3 className="text-lg font-semibold">Progress Tracker</h3>
-                        <TrendingUp className="w-5 h-5 text-accent" />
+                        <h3 className="text-sm sm:text-base lg:text-lg font-semibold">Progress Tracker</h3>
+                        <TrendingUp className="w-3 h-3 sm:w-4 sm:h-4 lg:w-5 lg:h-5 text-accent" />
                       </div>
-                      <div className="space-y-3">
-                        <div className="h-20 bg-accent/10 rounded-lg p-3">
+                      <div className="space-y-2 sm:space-y-3">
+                        <div className="h-12 sm:h-16 lg:h-20 bg-accent/10 rounded-md sm:rounded-lg p-2 sm:p-3">
                           <div className="text-xs text-muted-foreground">Inches Lost</div>
-                          <div className="text-2xl font-bold text-accent">-4.2"</div>
+                          <div className="text-lg sm:text-xl lg:text-2xl font-bold text-accent">-4.2"</div>
                         </div>
-                        <div className="h-20 bg-primary/10 rounded-lg p-3">
+                        <div className="h-12 sm:h-16 lg:h-20 bg-primary/10 rounded-md sm:rounded-lg p-2 sm:p-3">
                           <div className="text-xs text-muted-foreground">Sessions Completed</div>
-                          <div className="text-2xl font-bold text-primary">3/6</div>
+                          <div className="text-lg sm:text-xl lg:text-2xl font-bold text-primary">3/6</div>
                         </div>
                       </div>
                     </div>
@@ -87,52 +87,50 @@ export function AppPromotionSection() {
           </div>
 
           {/* Right Side - App Benefits */}
-          <div className="space-y-8">
-            <div className="space-y-4">
-              <h2 className="text-3xl md:text-4xl font-bold text-foreground">
+          <div className="space-y-6 sm:space-y-8 order-1 lg:order-2">
+            <div className="space-y-3 sm:space-y-4 text-center lg:text-left">
+              <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-foreground">
                 Take Control with Our <span className="text-primary">Mobile App</span>
               </h2>
-              <p className="text-xl text-muted-foreground">
+              <p className="text-base sm:text-lg lg:text-xl text-muted-foreground">
                 Manage your transformation journey with our comprehensive mobile app designed for your convenience.
               </p>
             </div>
 
             {/* Features List */}
-            <div className="space-y-6">
+            <div className="space-y-4 sm:space-y-6">
               {appFeatures.map((feature, index) => {
                 const IconComponent = feature.icon
                 return (
-                  <div key={index} className="flex items-start gap-4">
-                    <div className="flex-shrink-0 w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center">
-                      <IconComponent className="w-6 h-6 text-primary" />
+                  <div key={index} className="flex items-start gap-3 sm:gap-4">
+                    <div className="flex-shrink-0 w-10 h-10 sm:w-12 sm:h-12 bg-primary/10 rounded-lg flex items-center justify-center">
+                      <IconComponent className="w-5 h-5 sm:w-6 sm:h-6 text-primary" />
                     </div>
-                    <div className="space-y-1">
-                      <h3 className="text-lg font-semibold text-foreground">{feature.title}</h3>
-                      <p className="text-muted-foreground">{feature.description}</p>
+                    <div className="space-y-1 min-w-0">
+                      <h3 className="text-base sm:text-lg font-semibold text-foreground">{feature.title}</h3>
+                      <p className="text-sm sm:text-base text-muted-foreground">{feature.description}</p>
                     </div>
                   </div>
                 )
               })}
             </div>
 
-            {/* Download Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4 pt-4">
+            <div className="pt-2 sm:pt-4">
               <Button
                 size="lg"
-                className="flex items-center gap-3 bg-foreground text-background hover:bg-foreground/90"
+                asChild
+                className="bg-gradient-to-r from-primary to-accent hover:from-primary/90 hover:to-accent/90 text-white px-6 sm:px-8 py-4 sm:py-6 text-base sm:text-lg font-bold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 w-full sm:w-auto"
               >
-                <Download className="w-5 h-5" />
-                <div className="text-left">
-                  <div className="text-xs">Download on the</div>
-                  <div className="text-sm font-semibold">App Store</div>
-                </div>
-              </Button>
-              <Button size="lg" variant="outline" className="flex items-center gap-3 bg-transparent">
-                <Download className="w-5 h-5" />
-                <div className="text-left">
-                  <div className="text-xs">Get it on</div>
-                  <div className="text-sm font-semibold">Google Play</div>
-                </div>
+                <a
+                  href="https://mdbodysculpting.repeatmd.app/signin"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-center gap-2 sm:gap-3"
+                >
+                  <ExternalLink className="w-4 h-4 sm:w-5 sm:h-5" />
+                  <span className="hidden xs:inline">Get Access</span>
+                  <span className="xs:hidden">Get App</span>
+                </a>
               </Button>
             </div>
           </div>

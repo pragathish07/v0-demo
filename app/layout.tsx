@@ -30,10 +30,13 @@ const dancing = Dancing_Script({
 })
 
 export const metadata: Metadata = {
-  title: "Transform Your Body - Premium Body Sculpting Clinic",
+  title: "Transform Your Body - Maryland Body Sculpting Clinic",
   description:
     "Advanced non-surgical body contouring treatments. FDA-approved, safe, and effective. Book your free consultation today.",
-  generator: "v0.app",
+  icons: {
+    icon: "/logo.webp",
+  }
+  
 }
 
 export default function RootLayout({
