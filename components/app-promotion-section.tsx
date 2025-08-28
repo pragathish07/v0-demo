@@ -128,7 +128,7 @@ export function AppPromotionSection() {
                   className="flex items-center justify-center gap-2 sm:gap-3"
                 >
                   <ExternalLink className="w-4 h-4 sm:w-5 sm:h-5" />
-                  <span className="hidden xs:inline">Get Access</span>
+                  <span className="xs:inline">Get Access</span>
                   <span className="xs:hidden">Get App</span>
                 </a>
               </Button>

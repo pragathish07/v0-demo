@@ -130,7 +130,7 @@ export function Footer() {
         {/* Bottom Footer */}
         <div className="py-8">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <div className="text-background/80 text-sm">© 2024 MD Body Sculpting. All rights reserved.</div>
+            <div className="text-background/80 text-sm">© 2025 MD Body Sculpting. All rights reserved.</div>
             <div className="flex gap-6 text-sm">
               <a href="#" className="text-background/80 hover:text-accent transition-colors">
                 Privacy Policy
@@ -138,9 +138,9 @@ export function Footer() {
               <a href="#" className="text-background/80 hover:text-accent transition-colors">
                 Terms of Service
               </a>
-              <a href="#" className="text-background/80 hover:text-accent transition-colors">
+              {/* <a href="#" className="text-background/80 hover:text-accent transition-colors">
                 HIPAA Notice
-              </a>
+              </a> */}
             </div>
           </div>
         </div>
