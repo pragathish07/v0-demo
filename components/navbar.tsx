@@ -81,23 +81,24 @@ export function Navbar() {
                 <Phone className="w-3 lg:w-4 h-3 lg:h-4 mr-1 lg:mr-2 group-hover:animate-bounce flex-shrink-0" />
                 <span className="font-semibold text-xs lg:text-sm whitespace-nowrap">(410) 505-8595</span>
               </a>
-              <Button
-                asChild
-                className={`bg-gradient-to-r from-primary to-accent hover:from-primary/90 hover:to-accent/90 text-white text-xs lg:text-lg px-3 lg:px-8 py-2 lg:py-5 rounded font-bold transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl border-2 border-transparent hover:border-white/20 relative overflow-hidden group ${
-                  shouldShake ? "animate-shake-rotate" : ""
-                }`}
-              >
-                <a
-                  href="https://book.squareup.com/appointments/2eb02510-65db-4773-9466-ebc2bf742d77/location/93THKJBR99KWV/services"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center whitespace-nowrap"
-                >
-                  <Sparkles className="w-3 lg:w-4 h-3 lg:h-4 mr-1 lg:mr-2 animate-pulse flex-shrink-0" />
-                  <span className="hidden lg:inline">Book Appointment</span>
-                  <span className="lg:hidden">Book</span>
-                </a>
-              </Button>
+             <Button
+                      asChild
+                      className={`bg-[#8e24aa] hover:bg-[#8e24aa] text-white text-xs lg:text-lg px-3 lg:px-8 py-2 lg:py-5 rounded font-bold transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl border-2 border-transparent relative overflow-hidden group ${
+                        shouldShake ? "animate-shake-rotate" : ""
+                      }`}
+                    >
+                      <a
+                        href="https://book.squareup.com/appointments/2eb02510-65db-4773-9466-ebc2bf742d77/location/93THKJBR99KWV/services"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center whitespace-nowrap"
+                      >
+                        <Sparkles className="w-3 lg:w-4 h-3 lg:h-4 mr-1 lg:mr-2 animate-pulse flex-shrink-0" />
+                        <span className="hidden lg:inline">Book Appointment</span>
+                        <span className="lg:hidden">Book</span>
+                      </a>
+                    </Button>
+
             </div>
 
             {/* Mobile Right Side - Just hamburger menu */}

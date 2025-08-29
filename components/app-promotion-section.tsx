@@ -30,56 +30,18 @@ export function AppPromotionSection() {
     <section className="py-8 sm:py-12 lg:py-16 bg-card">
       <div className="container mx-auto px-3 sm:px-4">
         <div className="grid lg:grid-cols-2 gap-8 sm:gap-10 lg:gap-12 items-center">
-          {/* Left Side - App Mockups */}
-          <div className="relative order-2 lg:order-1">
-            <div className="flex justify-center items-center gap-2 sm:gap-4">
-              {/* Phone Mockup 1 */}
-              <div className="relative">
-                <div className="w-40 h-80 sm:w-52 sm:h-[420px] lg:w-64 lg:h-[500px] bg-foreground rounded-[1.5rem] sm:rounded-[2rem] lg:rounded-[2.5rem] p-1.5 sm:p-2 shadow-2xl">
-                  <div className="w-full h-full bg-background rounded-[1.25rem] sm:rounded-[1.5rem] lg:rounded-[2rem] overflow-hidden">
-                    <div className="p-3 sm:p-4 lg:p-6 space-y-2 sm:space-y-3 lg:space-y-4">
-                      <div className="flex items-center justify-between">
-                        <h3 className="text-sm sm:text-base lg:text-lg font-semibold">Book Treatment</h3>
-                        <Badge variant="secondary" className="text-xs">New</Badge>
-                      </div>
-                      <div className="space-y-2 sm:space-y-3">
-                        <div className="h-8 sm:h-10 lg:h-12 bg-primary/10 rounded-md sm:rounded-lg flex items-center px-2 sm:px-3 lg:px-4">
-                          <Calendar className="w-3 h-3 sm:w-4 sm:h-4 lg:w-5 lg:h-5 text-primary mr-2 sm:mr-3" />
-                          <span className="text-xs sm:text-sm">Select Date & Time</span>
-                        </div>
-                        <div className="h-8 sm:h-10 lg:h-12 bg-muted rounded-md sm:rounded-lg flex items-center px-2 sm:px-3 lg:px-4">
-                          <span className="text-xs sm:text-sm text-muted-foreground">Choose Treatment</span>
-                        </div>
-                        <div className="h-8 sm:h-10 lg:h-12 bg-muted rounded-md sm:rounded-lg flex items-center px-2 sm:px-3 lg:px-4">
-                          <span className="text-xs sm:text-sm text-muted-foreground">Personal Details</span>
-                        </div>
-                      </div>
-                      <Button className="w-full bg-primary text-xs sm:text-sm py-2 sm:py-3">Book Now</Button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              {/* Phone Mockup 2 - Slightly offset */}
-              <div className="relative -ml-4 sm:-ml-6 lg:-ml-8 mt-4 sm:mt-6 lg:mt-8">
-                <div className="w-40 h-80 sm:w-52 sm:h-[420px] lg:w-64 lg:h-[500px] bg-foreground rounded-[1.5rem] sm:rounded-[2rem] lg:rounded-[2.5rem] p-1.5 sm:p-2 shadow-2xl">
-                  <div className="w-full h-full bg-background rounded-[1.25rem] sm:rounded-[1.5rem] lg:rounded-[2rem] overflow-hidden">
-                    <div className="p-3 sm:p-4 lg:p-6 space-y-2 sm:space-y-3 lg:space-y-4">
-                      <div className="flex items-center justify-between">
-                        <h3 className="text-sm sm:text-base lg:text-lg font-semibold">Progress Tracker</h3>
-                        <TrendingUp className="w-3 h-3 sm:w-4 sm:h-4 lg:w-5 lg:h-5 text-accent" />
-                      </div>
-                      <div className="space-y-2 sm:space-y-3">
-                        <div className="h-12 sm:h-16 lg:h-20 bg-accent/10 rounded-md sm:rounded-lg p-2 sm:p-3">
-                          <div className="text-xs text-muted-foreground">Inches Lost</div>
-                          <div className="text-lg sm:text-xl lg:text-2xl font-bold text-accent">-4.2"</div>
-                        </div>
-                        <div className="h-12 sm:h-16 lg:h-20 bg-primary/10 rounded-md sm:rounded-lg p-2 sm:p-3">
-                          <div className="text-xs text-muted-foreground">Sessions Completed</div>
-                          <div className="text-lg sm:text-xl lg:text-2xl font-bold text-primary">3/6</div>
-                        </div>
-                      </div>
-                    </div>
+          {/* Left Side - Single Phone Mockup */}
+          <div className="relative order-2 lg:order-1 flex justify-center">
+            <div className="relative">
+              <div className="w-64 h-[500px] sm:w-80 sm:h-[600px] lg:w-96 lg:h-[700px] rounded-[2.5rem] p-2 shadow-2xl border-4 border-black" style={{ backgroundColor: '#8e24aa' }}>
+                <div className="w-full h-full rounded-[2rem] overflow-hidden flex items-center justify-center" style={{ backgroundColor: '#8e24aa' }}>
+                  {/* Logo Container */}
+                  <div className="w-32 h-32 sm:w-40 sm:h-40 lg:w-48 lg:h-48 bg-white rounded-full flex items-center justify-center shadow-lg">
+                    <img 
+                      src="/logo.webp" 
+                      alt="MD Body Sculpting Logo" 
+                      className="w-20 h-20 sm:w-24 sm:h-24 lg:w-28 lg:h-28 object-contain"
+                    />
                   </div>
                 </div>
               </div>

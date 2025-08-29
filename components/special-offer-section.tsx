@@ -93,7 +93,7 @@ export function SpecialOfferSection() {
                   <Button
                     size="lg"
                     asChild
-                    className="text-xl px-12 py-6 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white w-full transform hover:scale-110 transition-all duration-300 shadow-2xl border-0 rounded-2xl font-bold"
+                    className="text-xl px-12 py-6 bg-[#8e24aa] hover:bg-[#8e24aa] text-white w-full transform hover:scale-110 transition-all duration-300 shadow-2xl border-0 rounded-2xl font-bold"
                   >
                     <a
                       href="https://book.squareup.com/appointments/2eb02510-65db-4773-9466-ebc2bf742d77/location/93THKJBR99KWV/services"
@@ -106,6 +106,7 @@ export function SpecialOfferSection() {
                       <Sparkles className="w-6 h-6 animate-spin" />
                     </a>
                   </Button>
+
 
                   <p className="text-sm text-muted-foreground text-center lg:text-left">
                     *Offer valid for new clients only. Cannot be combined with other offers.

@@ -19,14 +19,10 @@ export function AppPopup() {
       }
     }, 10000)
 
-    // Set up recurring popup every 60 seconds
-    const recurringTimer = setInterval(() => {
-      setIsVisible(true)
-    }, 60000)
 
     return () => {
       clearTimeout(initialTimer)
-      clearInterval(recurringTimer)
+      
     }
   }, [hasShown])
 

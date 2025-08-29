@@ -162,7 +162,7 @@ export function ServicesSection() {
           }`}
           style={{ transitionDelay: '700ms' }}
         >
-          <Button
+          {/* <Button
             size="lg"
             variant="outline"
             asChild
@@ -178,7 +178,7 @@ export function ServicesSection() {
               <span className="xs:hidden">Book Consultation</span>
               <Sparkles className="w-4 h-4 sm:w-5 sm:h-5 group-hover:rotate-12 transition-transform duration-300" />
             </a>
-          </Button>
+          </Button> */}
         </div>
       </div>
 

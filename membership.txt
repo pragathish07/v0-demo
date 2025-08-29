@@ -166,3 +166,90 @@ I Want This - https://mdbodysculpting.repeatmd.app/shop/memberships
 
 
 google reviews iframe - https://backend.leadconnectorhq.com/appengine/reviews/get_widget/AEIp0xffz20t1rZ02E7l
+
+
+
+# Website Redesign Prompt - Body Sculpting Clinic
+
+## Project Brief
+**REDESIGN the existing body sculpting clinic website based on the provided screenshot. Use ONLY the existing content, text, and information visible in the screenshot - DO NOT create new content or copy.**
+
+## Design Requirements
+
+### Content Usage
+- **EXTRACT and USE** all existing text, headings, descriptions, and information from the provided screenshot
+- **PRESERVE** all current service offerings, pricing, and promotional content exactly as shown
+- **MAINTAIN** the same business information, contact details, and offers from the original
+- **DO NOT** write new headlines, descriptions, or marketing copy
+- **REORGANIZE** the existing content into a modern, conversion-focused layout
+
+### Color Palette (MANDATORY)
+Use ONLY these specified colors:
+Accent 1 - #b39ddb
+Accent 2 - #e1bee7
+Accent 3 - #512da8
+- **Background:** #ffffff
+- **foreground: #8e24aa
+
+
+### Layout Transformation
+**Current Issues to Fix:**
+- Improve visual hierarchy and content organization
+- Enhance mobile responsiveness 
+- Strengthen call-to-action placement and visibility
+- Modernize typography and spacing
+- Optimize conversion flow and user journey
+
+### Redesign Objectives
+1. **Maintain All Existing Content** - Use exact text from screenshot
+2. **Apply Modern Design Principles** - Clean, professional medical aesthetic
+3. **Improve Conversion Rate** - Better CTA placement and visual flow
+4. **Enhance User Experience** - Intuitive navigation and mobile optimization
+5. **Strengthen Trust Elements** - Better presentation of credentials and testimonials
+
+### Specific Redesign Instructions
+
+#### Hero Section Redesign
+- Use the existing headline and subheading from the screenshot
+- Reorganize layout for better visual impact
+- Apply specified color palette to backgrounds and text
+- Maintain original promotional offers and pricing
+- Improve CTA button design and placement
+
+#### Content Reorganization  
+- Extract all service descriptions from the screenshot
+- Restructure into modern card layouts or grid systems
+- Use existing testimonials and reviews exactly as written
+- Preserve all contact information and business details
+- Maintain FAQ content but improve presentation
+
+#### Visual Improvements
+- Modern typography using the provided color scheme
+- Clean spacing and improved readability
+- Professional medical clinic aesthetic
+- High-quality placeholder images for body sculpting
+- Consistent design language throughout
+
+#### Conversion Optimization
+- Strategically place existing CTAs for maximum impact
+- Highlight the current special offers more prominently
+- Improve appointment booking section visibility
+- Enhance trust signals presentation
+- Better mobile experience for lead generation
+
+### Technical Specifications
+- **Responsive Design:** Mobile-first approach
+- **Loading Speed:** Optimized for fast performance  
+- **Accessibility:** WCAG compliant design
+- **SEO Structure:** Proper heading hierarchy
+- **User Experience:** Intuitive navigation flow
+
+## Deliverable
+Create a modern, high-converting homepage redesign that:
+- Uses 100% of the existing content from the provided screenshot
+- Applies the specified color palette consistently
+- Improves conversion potential through better design
+- Maintains the same business offerings and information
+- Presents content in a more professional, trustworthy manner
+
+**IMPORTANT:** Do not add any new text content, services, or information not present in the original screenshot. This is a visual and structural redesign only, using existing content in a more effective way.

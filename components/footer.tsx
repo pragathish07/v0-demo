@@ -9,8 +9,6 @@ export function Footer() {
     "Skin Tightening & Anti-Aging",
     "Fat Reduction & Body Contouring",
     "HIFU + Liposonix Fat Reduction",
-    "Free Consultation",
-    "Virtual Consultation",
   ]
 
   const quickLinks = ["About Us", "Our Team", "Before & After Gallery", "Testimonials", "Blog", "Contact Us"]

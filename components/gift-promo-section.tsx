@@ -137,16 +137,7 @@ export function GiftPromoSection() {
                   </div>
 
                   {/* Special Offer Badge */}
-                  <motion.div
-                    initial={{ scale: 0 }}
-                    whileInView={{ scale: 1 }}
-                    transition={{ duration: 0.6, delay: 0.4 }}
-                    className="inline-block mb-6"
-                  >
-                    <Badge className="bg-gradient-to-r from-red-500 to-pink-500 text-white px-6 py-3 text-lg font-bold animate-pulse">
-                      🎁 BONUS: Free Consultation Included
-                    </Badge>
-                  </motion.div>
+               
 
                   {/* CTA Button */}
                   <motion.div
@@ -158,7 +149,7 @@ export function GiftPromoSection() {
                     <Button
                       size="lg"
                       asChild
-                      className="text-xl px-12 py-6 bg-gradient-to-r from-gold-500 to-yellow-500 hover:from-gold-600 hover:to-yellow-600 text-black font-bold rounded-2xl shadow-2xl transform hover:scale-110 transition-all duration-300 border-0"
+                      className="text-xl px-12 py-6 bg-gradient-to-r from-gold-500 text-white font-bold rounded-2xl shadow-2xl transform hover:scale-110 transition-all duration-300 border-0"
                     >
                       <a
                         href="https://app.squareup.com/gift/XWX7PSPHT6V1Z/order"

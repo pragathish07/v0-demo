@@ -7,10 +7,10 @@ import { Button } from "@/components/ui/button"
 export function AboutUsSection() {
   return (
     <section className="relative py-24 overflow-hidden">
-      {/* Animated Background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-purple-50 via-white to-purple-100">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(147,51,234,0.1),transparent_50%)]" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(147,51,234,0.05),transparent_50%)]" />
+      {/* Solid Background */}
+      <div className="absolute inset-0 bg-[#8e24aa]/5">
+        <div className="absolute inset-0 bg-[#8e24aa]/10" />
+        <div className="absolute inset-0 bg-[#8e24aa]/5" />
       </div>
 
       {/* Floating Elements */}
@@ -21,7 +21,7 @@ export function AboutUsSection() {
             rotate: [0, 5, 0],
           }}
           transition={{ duration: 6, repeat: Number.POSITIVE_INFINITY, ease: "easeInOut" }}
-          className="absolute top-20 left-10 w-16 h-16 bg-gradient-to-br from-purple-400 to-pink-400 rounded-full opacity-20 blur-sm"
+          className="absolute top-20 left-10 w-16 h-16 bg-[#8e24aa] rounded-full opacity-20 blur-sm"
         />
         <motion.div
           animate={{
@@ -29,7 +29,7 @@ export function AboutUsSection() {
             x: [0, 10, 0],
           }}
           transition={{ duration: 8, repeat: Number.POSITIVE_INFINITY, ease: "easeInOut" }}
-          className="absolute bottom-32 right-16 w-24 h-24 bg-gradient-to-br from-purple-300 to-blue-300 rounded-full opacity-15 blur-sm"
+          className="absolute bottom-32 right-16 w-24 h-24 bg-[#8e24aa] rounded-full opacity-15 blur-sm"
         />
       </div>
 
@@ -46,16 +46,14 @@ export function AboutUsSection() {
             initial={{ scale: 0 }}
             whileInView={{ scale: 1 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="inline-flex items-center gap-2 bg-gradient-to-r from-purple-100 to-pink-100 px-6 py-3 rounded-full mb-6"
+            className="inline-flex items-center gap-2 bg-[#8e24aa]/10 px-6 py-3 rounded-full mb-6"
           >
-            <Sparkles className="w-5 h-5 text-purple-600" />
-            <span className="text-purple-700 font-medium">About MD Body Sculpting</span>
+            <Sparkles className="w-5 h-5 text-[#8e24aa]" />
+            <span className="text-[#8e24aa] font-medium">About MD Body Sculpting</span>
           </motion.div>
 
           <h2 className="font-display text-5xl md:text-6xl font-bold mb-6">
-            <span className="bg-gradient-to-r from-purple-600 via-purple-700 to-purple-800 bg-clip-text text-transparent">
-              Transform Your
-            </span>
+            <span className="text-[#8e24aa]">Transform Your</span>
             <br />
             <span className="text-gray-900">Body & Confidence</span>
           </h2>
@@ -76,48 +74,65 @@ export function AboutUsSection() {
             viewport={{ once: true }}
             className="space-y-8"
           >
-            <div className="space-y-6">
-              <h3 className="font-display text-3xl font-bold text-gray-900">Why Choose MD Body Sculpting?</h3>
+            <div className="space-y-8">
+              {/* Founded Section */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6 }}
+                viewport={{ once: true }}
+                className="text-center mb-8"
+              >
+                <h3 className="font-display text-3xl font-bold text-[#8e24aa] mb-4">Founded in 2021</h3>
+                <p className="text-lg text-gray-700 leading-relaxed">
+                  Welcome to Maryland Body Sculpting, your destination for revolutionizing your wellness journey. Our clinic specializes in non-invasive body sculpting and anti-aging treatments, designed for those who prefer effective results without surgical intervention.
+                </p>
+              </motion.div>
 
-              <div className="space-y-4">
-                {[
-                  {
-                    icon: Award,
-                    title: "FDA-Approved Technology",
-                    description: "We use only the latest, clinically proven treatments for safe and effective results.",
-                  },
-                  {
-                    icon: Users,
-                    title: "Expert Medical Team",
-                    description:
-                      "Our certified professionals have years of experience in body contouring and aesthetic medicine.",
-                  },
-                  {
-                    icon: Heart,
-                    title: "Personalized Care",
-                    description: "Every treatment plan is customized to your unique body goals and lifestyle needs.",
-                  },
-                ].map((item, index) => (
-                  <motion.div
-                    key={index}
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.6, delay: index * 0.1 }}
-                    viewport={{ once: true }}
-                    className="flex gap-4 p-6 bg-white/80 backdrop-blur-sm rounded-2xl border border-purple-100 hover:shadow-lg transition-all duration-300"
-                  >
-                    <div className="flex-shrink-0">
-                      <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-purple-600 rounded-xl flex items-center justify-center">
-                        <item.icon className="w-6 h-6 text-white" />
-                      </div>
-                    </div>
-                    <div>
-                      <h4 className="font-semibold text-gray-900 mb-2">{item.title}</h4>
-                      <p className="text-gray-600">{item.description}</p>
-                    </div>
-                  </motion.div>
-                ))}
-              </div>
+              {/* Our Mission & Approach */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+                viewport={{ once: true }}
+                className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 border border-[#8e24aa]/20"
+              >
+                <h4 className="font-display text-2xl font-bold text-[#8e24aa] mb-4">Our Mission & Approach</h4>
+                <p className="text-gray-700 leading-relaxed">
+                  At Maryland Body Sculpting, our mission is to empower your transformation journey both physically and mentally. We believe in providing cutting-edge, non-invasive technology and utilizing our knowledge to help you become the best version of yourself. Our team is dedicated to personalizing your experience, focusing on targeted areas like thighs, upper arms, and waist, and complementing your overall health and fitness goals.
+                </p>
+              </motion.div>
+
+              {/* Transformation */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.4 }}
+                viewport={{ once: true }}
+                className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 border border-[#8e24aa]/20"
+              >
+                <h4 className="font-display text-2xl font-bold text-[#8e24aa] mb-4">Transformation</h4>
+                <p className="text-gray-700 leading-relaxed">
+                  Your unique journey to self-confidence and well-being is at the heart of what we do. When you begin to feel more confident in your body, it positively influences every aspect of your life, from boosting self-esteem to enhancing mental health. Our treatments are more than skin-deep; they're about fostering self-love and inner happiness.
+                </p>
+              </motion.div>
+
+              {/* What We Offer */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.6 }}
+                viewport={{ once: true }}
+                className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 border border-[#8e24aa]/20"
+              >
+                <h4 className="font-display text-2xl font-bold text-[#8e24aa] mb-4">What We Offer</h4>
+                <p className="text-gray-700 leading-relaxed mb-4">
+                  Our suite of services includes targeted fat reduction, skin tightening, cellulite removal, breast and butt lifts, and the latest in electromagnetic muscle toning, High-Intensity Focused Ultrasound (HIFU), and Radio Frequency skin-tightening technologies. We go beyond physical treatments by integrating IV therapy, vitamin supplementation, ensuring that your journey with us contributes to a happier, healthier you.
+                </p>
+                <p className="text-gray-700 leading-relaxed">
+                  Maryland Body Sculpting isn't just about aesthetic changes; it's about empowerment. We're your partner in achieving a more confident, vibrant, and healthier lifestyle.
+                </p>
+              </motion.div>
             </div>
           </motion.div>
 
@@ -129,7 +144,7 @@ export function AboutUsSection() {
             viewport={{ once: true }}
             className="relative"
           >
-            <div className="bg-white/90 backdrop-blur-sm rounded-3xl p-8 shadow-2xl border border-purple-100">
+            <div className="bg-white/90 backdrop-blur-sm rounded-3xl p-8 shadow-2xl border border-[#8e24aa]/20">
               <div className="text-center mb-6">
                 <h3 className="font-display text-2xl font-bold text-gray-900 mb-2">Book Your Consultation</h3>
                 <p className="text-gray-600">Schedule your personalized consultation today</p>
@@ -147,7 +162,7 @@ export function AboutUsSection() {
               <div className="mt-6">
                 <Button
                   asChild
-                  className="w-full bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white py-6 text-lg font-bold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
+                  className="w-full bg-[#8e24aa] hover:bg-[#8e24aa] text-white py-6 text-lg font-bold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
                 >
                   <a
                     href="https://book.squareup.com/appointments/2eb02510-65db-4773-9466-ebc2bf742d77/location/93THKJBR99KWV/services"
@@ -164,8 +179,8 @@ export function AboutUsSection() {
             </div>
 
             {/* Decorative Elements */}
-            <div className="absolute -top-4 -right-4 w-20 h-20 bg-gradient-to-br from-purple-400 to-pink-400 rounded-full opacity-20 blur-xl" />
-            <div className="absolute -bottom-4 -left-4 w-16 h-16 bg-gradient-to-br from-purple-300 to-blue-300 rounded-full opacity-15 blur-lg" />
+            <div className="absolute -top-4 -right-4 w-20 h-20 bg-[#8e24aa] rounded-full opacity-20 blur-xl" />
+            <div className="absolute -bottom-4 -left-4 w-16 h-16 bg-[#8e24aa] rounded-full opacity-15 blur-lg" />
           </motion.div>
         </div>
 
@@ -178,7 +193,7 @@ export function AboutUsSection() {
           className="grid grid-cols-2 md:grid-cols-4 gap-8"
         >
           {[
-            { number: "5000+", label: "Happy Clients" },
+            { number: "500+", label: "Happy Clients" },
             { number: "98%", label: "Satisfaction Rate" },
             { number: "15+", label: "Years Experience" },
             { number: "24/7", label: "Support Available" },
@@ -189,9 +204,9 @@ export function AboutUsSection() {
               whileInView={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
               viewport={{ once: true }}
-              className="text-center p-6 bg-white/60 backdrop-blur-sm rounded-2xl border border-purple-100"
+              className="text-center p-6 bg-white/60 backdrop-blur-sm rounded-2xl border border-[#8e24aa]/20"
             >
-              <div className="font-display text-3xl font-bold text-purple-600 mb-2">{stat.number}</div>
+              <div className="font-display text-3xl font-bold text-[#8e24aa] mb-2">{stat.number}</div>
               <div className="text-gray-600 font-medium">{stat.label}</div>
             </motion.div>
           ))}
