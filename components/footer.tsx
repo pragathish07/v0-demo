@@ -47,33 +47,20 @@ export function Footer() {
               {/* Social Media */}
               <div className="flex gap-3 sm:gap-4">
                 <Button
-                  size="sm"
-                  variant="outline"
+                  size="icon"
+                  variant="link"
                   className="w-8 h-8 sm:w-10 sm:h-10 p-0 bg-transparent border-background/30 hover:bg-accent hover:border-accent"
                 >
                   <Facebook className="w-3 h-3 sm:w-4 sm:h-4" />
                 </Button>
                 <Button
-                  size="sm"
-                  variant="outline"
+                  size="icon"
+                  variant="link"
                   className="w-8 h-8 sm:w-10 sm:h-10 p-0 bg-transparent border-background/30 hover:bg-accent hover:border-accent"
                 >
                   <Instagram className="w-3 h-3 sm:w-4 sm:h-4" />
                 </Button>
-                <Button
-                  size="sm"
-                  variant="outline"
-                  className="w-8 h-8 sm:w-10 sm:h-10 p-0 bg-transparent border-background/30 hover:bg-accent hover:border-accent"
-                >
-                  <Twitter className="w-3 h-3 sm:w-4 sm:h-4" />
-                </Button>
-                <Button
-                  size="sm"
-                  variant="outline"
-                  className="w-8 h-8 sm:w-10 sm:h-10 p-0 bg-transparent border-background/30 hover:bg-accent hover:border-accent"
-                >
-                  <Youtube className="w-3 h-3 sm:w-4 sm:h-4" />
-                </Button>
+                
               </div>
             </div>
 
