@@ -9,23 +9,20 @@ import { Calendar, Clock, MapPin, Phone, Sparkles, Star, CheckCircle } from "luc
 export function BookAppointmentSection() {
   return (
     <section className="py-12 sm:py-16 lg:py-24 relative overflow-hidden">
-      {/* Animated Background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-[#e1bee7] via-white to-[#b39ddb]">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_30%,rgba(142,36,170,0.08),transparent_50%)]" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_70%,rgba(81,45,168,0.05),transparent_50%)]" />
-      </div>
+      {/* Solid Purple Background */}
+      <div className="absolute inset-0 bg-[#8e24aa]/10" />
 
       {/* Floating Elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <motion.div
           animate={{ y: [0, -25, 0], rotate: [0, 8, 0] }}
           transition={{ duration: 7, repeat: Number.POSITIVE_INFINITY, ease: "easeInOut" }}
-          className="absolute top-8 sm:top-16 left-6 sm:left-12 w-12 h-12 sm:w-20 sm:h-20 bg-gradient-to-br from-[#8e24aa]/30 to-[#b39ddb]/30 rounded-full blur-xl"
+          className="absolute top-8 sm:top-16 left-6 sm:left-12 w-12 h-12 sm:w-20 sm:h-20 bg-[#8e24aa]/30 rounded-full blur-xl"
         />
         <motion.div
           animate={{ y: [0, 18, 0], x: [0, 12, 0] }}
           transition={{ duration: 9, repeat: Number.POSITIVE_INFINITY, ease: "easeInOut" }}
-          className="absolute bottom-10 sm:bottom-20 right-10 sm:right-20 w-16 h-16 sm:w-28 sm:h-28 bg-gradient-to-br from-[#b39ddb]/20 to-[#e1bee7]/20 rounded-full blur-2xl"
+          className="absolute bottom-10 sm:bottom-20 right-10 sm:right-20 w-16 h-16 sm:w-28 sm:h-28 bg-[#8e24aa]/20 rounded-full blur-2xl"
         />
       </div>
 
@@ -42,16 +39,14 @@ export function BookAppointmentSection() {
             initial={{ scale: 0 }}
             whileInView={{ scale: 1 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="inline-flex items-center gap-2 bg-gradient-to-r from-[#e1bee7] to-[#b39ddb] px-4 sm:px-6 py-2 sm:py-3 rounded-full mb-4 sm:mb-6"
+            className="inline-flex items-center gap-2 bg-[#8e24aa]/20 px-4 sm:px-6 py-2 sm:py-3 rounded-full mb-4 sm:mb-6"
           >
             <Calendar className="w-4 h-4 sm:w-5 sm:h-5 text-[#8e24aa]" />
-            <span className="text-[#512da8] font-medium text-sm sm:text-base">Book Your Appointment</span>
+            <span className="text-[#8e24aa] font-medium text-sm sm:text-base">Book Your Appointment</span>
           </motion.div>
 
           <h2 className="font-display text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6">
-            <span className="bg-gradient-to-r from-[#8e24aa] via-[#b39ddb] to-[#512da8] bg-clip-text text-transparent">
-              Ready to Start Your
-            </span>
+            <span className="text-[#8e24aa]">Ready to Start Your</span>
             <br />
             <span className="text-gray-900">Transformation?</span>
           </h2>
@@ -85,10 +80,10 @@ export function BookAppointmentSection() {
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6, delay: index * 0.1 }}
                     viewport={{ once: true }}
-                    className="flex gap-3 sm:gap-4 p-4 sm:p-6 bg-white/80 backdrop-blur-sm rounded-xl sm:rounded-2xl border border-[#b39ddb]/40 hover:shadow-lg transition-all duration-300"
+                    className="flex gap-3 sm:gap-4 p-4 sm:p-6 bg-white/80 backdrop-blur-sm rounded-xl sm:rounded-2xl border border-[#8e24aa]/40 hover:shadow-lg transition-all duration-300"
                   >
                     <div className="flex-shrink-0">
-                      <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-[#8e24aa] to-[#512da8] rounded-lg sm:rounded-xl flex items-center justify-center">
+                      <div className="w-10 h-10 sm:w-12 sm:h-12 bg-[#8e24aa] rounded-lg sm:rounded-xl flex items-center justify-center">
                         <item.icon className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
                       </div>
                     </div>
@@ -102,7 +97,7 @@ export function BookAppointmentSection() {
             </div>
 
             {/* Contact Info */}
-            <Card className="bg-gradient-to-br from-[#f5f0fa] to-[#e1bee7] border-[#b39ddb]">
+            <Card className="bg-[#f5f0fa] border-[#8e24aa]">
               <CardContent className="p-4 sm:p-6">
                 <h4 className="font-semibold text-gray-900 mb-3 sm:mb-4 text-sm sm:text-base">Contact Information</h4>
                 <div className="space-y-2 sm:space-y-3">
@@ -131,11 +126,11 @@ export function BookAppointmentSection() {
             viewport={{ once: true }}
             className="relative mt-8 lg:mt-0"
           >
-            <Card className="bg-white/90 backdrop-blur-sm rounded-2xl sm:rounded-3xl p-6 sm:p-8 lg:p-12 shadow-2xl border border-[#b39ddb]/40 text-center">
+            <Card className="bg-white/90 backdrop-blur-sm rounded-2xl sm:rounded-3xl p-6 sm:p-8 lg:p-12 shadow-2xl border border-[#8e24aa]/40 text-center">
               <CardContent className="space-y-6 sm:space-y-8">
                 {/* Special Offer Badge */}
                 <motion.div initial={{ scale: 0 }} whileInView={{ scale: 1 }} transition={{ duration: 0.6, delay: 0.2 }}>
-                  <Badge className="bg-gradient-to-r from-[#8e24aa] to-[#512da8] text-white px-4 sm:px-6 py-2 sm:py-3 text-sm sm:text-lg font-bold animate-pulse">
+                  <Badge className="bg-[#8e24aa] text-white px-4 sm:px-6 py-2 sm:py-3 text-sm sm:text-lg font-bold animate-pulse">
                     FREE Consultation Worth $150
                   </Badge>
                 </motion.div>
@@ -157,9 +152,9 @@ export function BookAppointmentSection() {
                         whileInView={{ opacity: 1, scale: 1 }}
                         transition={{ duration: 0.6, delay: index * 0.1 }}
                         viewport={{ once: true }}
-                        className="text-center p-2 sm:p-4 bg-[#e1bee7] rounded-lg sm:rounded-xl"
+                        className="text-center p-2 sm:p-4 bg-[#8e24aa]/20 rounded-lg sm:rounded-xl"
                       >
-                        <div className="font-display text-lg sm:text-xl lg:text-2xl font-bold text-[#512da8] mb-1">{stat.number}</div>
+                        <div className="font-display text-lg sm:text-xl lg:text-2xl font-bold text-[#8e24aa] mb-1">{stat.number}</div>
                         <div className="text-gray-700 text-xs sm:text-sm font-medium">{stat.label}</div>
                       </motion.div>
                     )
@@ -170,7 +165,7 @@ export function BookAppointmentSection() {
                   <Button
                     size="lg"
                     asChild
-                    className="text-sm sm:text-lg lg:text-xl px-6 sm:px-8 lg:px-12 py-4 sm:py-5 lg:py-6 bg-gradient-to-r from-[#8e24aa] to-[#512da8] hover:from-[#b39ddb] hover:to-[#8e24aa] text-white w-full transform hover:scale-105 transition-all duration-300 shadow-2xl border-0 rounded-xl sm:rounded-2xl font-bold"
+                    className="text-sm sm:text-lg lg:text-xl px-6 sm:px-8 lg:px-12 py-4 sm:py-5 lg:py-6 bg-[#8e24aa] hover:bg-[#7b1fa2] text-white w-full transform hover:scale-105 transition-all duration-300 shadow-2xl border-0 rounded-xl sm:rounded-2xl font-bold"
                   >
                     <a
                       href="https://book.squareup.com/appointments/2eb02510-65db-4773-9466-ebc2bf742d77/location/93THKJBR99KWV/services"
@@ -191,10 +186,6 @@ export function BookAppointmentSection() {
                 </p>
               </CardContent>
             </Card>
-
-            {/* Decorative Elements */}
-            <div className="absolute -top-2 sm:-top-4 -right-2 sm:-right-4 w-12 h-12 sm:w-20 sm:h-20 bg-gradient-to-br from-[#b39ddb]/40 to-[#e1bee7]/40 rounded-full opacity-20 blur-xl animate-pulse" />
-            <div className="absolute -bottom-2 sm:-bottom-4 -left-2 sm:-left-4 w-10 h-10 sm:w-16 sm:h-16 bg-gradient-to-br from-[#8e24aa]/20 to-[#512da8]/20 rounded-full opacity-15 blur-lg animate-bounce" />
           </motion.div>
         </div>
       </div>

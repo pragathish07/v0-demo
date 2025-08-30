@@ -58,7 +58,7 @@ export function Navbar() {
             {/* Desktop Navigation */}
             <div className="hidden lg:flex flex-1 justify-center px-4">
               <div className="flex items-center space-x-1 xl:space-x-3">
-                {navItems.map((item, index) => (
+               {/*  {navItems.map((item, index) => (
                   <a
                     key={item.name}
                     href={item.href}
@@ -68,7 +68,7 @@ export function Navbar() {
                     <span className="relative z-10">{item.name}</span>
                     <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-primary to-accent transition-all duration-300 group-hover:w-full"></span>
                   </a>
-                ))}
+                ))} */}
               </div>
             </div>
 
@@ -119,7 +119,7 @@ export function Navbar() {
           <div className="md:hidden absolute top-full left-0 right-0 bg-white/95 backdrop-blur-md shadow-2xl border-b border-primary/20 min-h-screen">
             <div className="px-2 sm:px-4">
               <div className="py-4 space-y-1">
-                {navItems.map((item) => (
+                {/* {navItems.map((item) => (
                   <a
                     key={item.name}
                     href={item.href}
@@ -128,7 +128,7 @@ export function Navbar() {
                   >
                     {item.name}
                   </a>
-                ))}
+                ))} */}
                 <div className="pt-4 border-t border-primary/20 mt-4 space-y-3">
                   <a
                     href="tel:+14105058595"
