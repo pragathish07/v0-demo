@@ -16,7 +16,7 @@ import { AppPopup } from "@/components/app-popup"
 export default function HomePage() {
   return (
     <main className="min-h-screen">
-      <Navbar />
+     
       <div id="home">
         <HeroSection />
       </div>
@@ -37,8 +37,8 @@ export default function HomePage() {
         <BookAppointmentSection />
       </div>
       <FaqSection />
-      <LocationSection />
-      <Footer />
+      
+      
       <AppPopup />
     </main>
   )

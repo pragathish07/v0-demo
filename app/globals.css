@@ -19,25 +19,25 @@
   --muted-foreground: oklch(0.5 0 0); /* Gray for muted text */
   --accent: #8e24aa; /* Bold bright purple for highlights */
   --accent-foreground: oklch(1 0 0); /* White for accent text */
-  --destructive: oklch(0.577 0.245 27.325);
-  --destructive-foreground: oklch(0.985 0 0);
-  --border: oklch(0.85 0.05 280); /* Purple-tinted borders */
-  --input: oklch(0.95 0.03 280); /* Light purple for inputs */
-  --ring: oklch(0.6 0.25 280 / 0.6); /* Vibrant purple ring for focus states */
-  --chart-1: oklch(0.6 0.25 280); /* Vibrant purple */
-  --chart-2: oklch(0.5 0.2 260); /* Deep purple */
-  --chart-3: oklch(0.15 0 0); /* Black */
-  --chart-4: oklch(0.8 0.1 280); /* Light purple */
-  --chart-5: oklch(1 0 0); /* White */
-  --radius: 0.75rem;
-  --sidebar: oklch(1 0 0);
-  --sidebar-foreground: oklch(0.15 0 0);
-  --sidebar-primary: oklch(0.6 0.25 280);
-  --sidebar-primary-foreground: oklch(1 0 0);
-  --sidebar-accent: oklch(0.85 0.15 280);
-  --sidebar-accent-foreground: oklch(0.15 0 0);
-  --sidebar-border: oklch(0.85 0.05 280);
-  --sidebar-ring: oklch(0.6 0.25 280 / 0.6);
+    --destructive: oklch(0.577 0.245 27.325);
+    --destructive-foreground: oklch(0.985 0 0);
+    --border: oklch(0.85 0.05 280); /* Purple-tinted borders */
+    --input: oklch(0.95 0.03 280); /* Light purple for inputs */
+    --ring: oklch(0.6 0.25 280 / 0.6); /* Vibrant purple ring for focus states */
+    --chart-1: oklch(0.6 0.25 280); /* Vibrant purple */
+    --chart-2: oklch(0.5 0.2 260); /* Deep purple */
+    --chart-3: oklch(0.15 0 0); /* Black */
+    --chart-4: oklch(0.8 0.1 280); /* Light purple */
+    --chart-5: oklch(1 0 0); /* White */
+    --radius: 0.75rem;
+    --sidebar: oklch(1 0 0);
+    --sidebar-foreground: oklch(0.15 0 0);
+    --sidebar-primary: oklch(0.6 0.25 280);
+    --sidebar-primary-foreground: oklch(1 0 0);
+    --sidebar-accent: oklch(0.85 0.15 280);
+    --sidebar-accent-foreground: oklch(0.15 0 0);
+    --sidebar-border: oklch(0.85 0.05 280);
+    --sidebar-ring: oklch(0.6 0.25 280 / 0.6);
   /* Added fancy font variables for headings */
   --font-sans: var(--font-geist);
   --font-serif: var(--font-manrope);

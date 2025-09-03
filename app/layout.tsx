@@ -1,9 +1,13 @@
+
 import type React from "react"
 import type { Metadata } from "next"
 import { Geist } from "next/font/google"
 import { Manrope } from "next/font/google"
 import { Playfair_Display, Dancing_Script } from "next/font/google"
 import "./globals.css"
+import { Navbar } from "@/components/navbar"
+import { Footer } from "@/components/footer"
+import { LocationSection } from "@/components/location-section"
 
 const geist = Geist({
   subsets: ["latin"],
@@ -57,7 +61,10 @@ export default function RootLayout({
           <div className="absolute bottom-20 right-1/3 w-28 h-28 bg-gradient-to-br from-pink-400/20 to-purple-400/10 rounded-full blur-xl animate-bounce delay-500"></div>
           <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-60 h-60 bg-gradient-to-br from-purple-300/10 to-blue-300/5 rounded-full blur-3xl animate-pulse delay-2000"></div>
         </div>
-        <div className="relative z-10">{children}</div>
+        <Navbar />
+          <main className="flex-grow">{children}</main>
+          <LocationSection />
+          <Footer />
       </body>
     </html>
   )
