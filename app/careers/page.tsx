@@ -31,7 +31,7 @@ export default function CareersPage() {
     })
   }
 
-  const sendEmail = async (emailData: { firstName: any; lastName: any; email: any; phone: any; comments: any }) => {
+const sendEmail = async (emailData: { firstName: string; lastName: string; email: string; phone: string; comments: string }) => {
     try {
       const response = await fetch('https://api.emailjs.com/api/v1.0/email/send', {
         method: 'POST',
@@ -39,16 +39,14 @@ export default function CareersPage() {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          service_id: 'YOUR_SERVICE_ID', // Replace with your EmailJS service ID
-          template_id: 'YOUR_TEMPLATE_ID', // Replace with your EmailJS template ID
-          user_id: 'YOUR_USER_ID', // Replace with your EmailJS user ID
+          service_id: 'service_h14arps',
+          template_id: 'template_x1ohtae',
+          user_id: 'YYVi9ASwA-_3_Jd3n',
           template_params: {
-            to_email: 'careers@marylandbodysculpting.com',
-            from_name: `${emailData.firstName} ${emailData.lastName}`,
-            from_email: emailData.email,
-            phone: emailData.phone,
-            message: emailData.comments || 'No additional comments provided',
-            subject: 'New Body Sculpting Technician Application'
+            applicant_name: `${emailData.firstName} ${emailData.lastName}`,
+            applicant_email: emailData.email,
+            applicant_phone: emailData.phone,
+            applicant_comments: emailData.comments || 'No additional comments provided'
           }
         })
       })
