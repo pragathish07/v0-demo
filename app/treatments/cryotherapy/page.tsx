@@ -3,6 +3,7 @@
 import { motion } from "framer-motion"
 import { Snowflake, Zap, Heart, Shield, Clock, Calendar, ExternalLink, CheckCircle } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import head from "next/head"
 
 export default function CryotherapyPage() {
   const wellnessBenefits = [
@@ -22,6 +23,8 @@ export default function CryotherapyPage() {
   ]
 
   return (
+  
+      
     <div className="min-h-screen bg-white">
       {/* Hero Section with Background */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
@@ -325,7 +328,7 @@ export default function CryotherapyPage() {
       </section>
 
       {/* Booking Section */}
-      <section className="py-24 bg-gradient-to-br from-[#8e24aa] to-[#512da8]">
+      <section className="py-24 bg-[#8e24aa]">
         <div className="container mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
@@ -395,5 +398,6 @@ export default function CryotherapyPage() {
         </div>
       </section>
     </div>
+    
   )
 }

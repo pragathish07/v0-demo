@@ -31,88 +31,86 @@ export default function CareersPage() {
     })
   }
 
-const sendEmail = async (emailData: { firstName: string; lastName: string; email: string; phone: string; comments: string }) => {
-    try {
-      const response = await fetch('https://api.emailjs.com/api/v1.0/email/send', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          service_id: 'service_h14arps',
-          template_id: 'template_x1ohtae',
-          user_id: 'YYVi9ASwA-_3_Jd3n',
-          template_params: {
-            applicant_name: `${emailData.firstName} ${emailData.lastName}`,
-            applicant_email: emailData.email,
-            applicant_phone: emailData.phone,
-            applicant_comments: emailData.comments || 'No additional comments provided'
-          }
+  const sendEmail = async (emailData: { firstName: string; lastName: string; email: string; phone: string; comments: string }) => {
+      try {
+        const response = await fetch('https://api.emailjs.com/api/v1.0/email/send', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            service_id: 'service_h14arps',
+            template_id: 'template_x1ohtae',
+            user_id: 'YYVi9ASwA-_3_Jd3n',
+            template_params: {
+              from_name: `${emailData.firstName} ${emailData.lastName}`,
+              from_email: emailData.email,
+              phone: emailData.phone,
+              message: emailData.comments || 'No additional comments provided'
+            }
+          })
         })
+        
+        return response.ok
+      } catch (error) {
+        console.error('Email sending failed:', error)
+        return false
+      }
+    }
+
+
+const handleSubmit = async (e: { preventDefault: () => void }) => {
+  e.preventDefault()
+  setIsSubmitting(true)
+  setSubmitStatus(null)
+
+  try {
+    // Send Email
+    const emailSent = await sendEmail(formData)
+
+    // Send SMS
+    const smsResponse = await fetch("/api/send-sms", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(formData),
+    })
+
+    const smsResult = await smsResponse.json()
+
+    // ✅ Check if both succeeded
+    if (emailSent && smsResult.success) {
+      setSubmitStatus({
+        type: "success",
+        message:
+          "Application submitted successfully! We'll get back to you within 24 hours.",
       })
-      
-      return response.ok
-    } catch (error) {
-      console.error('Email sending failed:', error)
-      return false
+
+      // Reset form
+      setFormData({
+        firstName: "",
+        lastName: "",
+        email: "",
+        phone: "",
+        comments: "",
+      })
+    } else {
+      setSubmitStatus({
+        type: "error",
+        message:
+          "There was an issue submitting your application. Please try again or contact us directly.",
+      })
     }
+  } catch (error) {
+    setSubmitStatus({
+      type: "error",
+      message:
+        "There was an issue submitting your application. Please try again or contact us directly.",
+    })
+  } finally {
+    setIsSubmitting(false)
   }
+}
 
-
-    const handleSubmit = async (e: { preventDefault: () => void }) => {
-        e.preventDefault()
-        setIsSubmitting(true)
-        setSubmitStatus(null)
-        
-        try {
-        // Send email
-        const emailSent = await sendEmail(formData)
-        
-        // Send SMS
-        const smsResponse = await fetch("/api/send-sms", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData)
-        })
-
-        const smsResult = await smsResponse.json()
-
-        if (smsResult.success) {
-        setSubmitStatus({
-            type: "success",
-            message:
-            "Application submitted successfully! We'll get back to you within 24 hours.",
-        })}
-        
-        if (emailSent) {
-            setSubmitStatus({
-            type: 'success',
-            message: 'Application submitted successfully! We\'ll get back to you within 24 hours.'
-            })
-            
-            // Reset form
-            setFormData({
-            firstName: '',
-            lastName: '',
-            email: '',
-            phone: '',
-            comments: ''
-            })
-        } else {
-            setSubmitStatus({
-            type: 'error',
-            message: 'There was an issue submitting your application. Please try again or contact us directly.'
-            })
-        }
-        } catch (error) {
-        setSubmitStatus({
-            type: 'error',
-            message: 'There was an issue submitting your application. Please try again or contact us directly.'
-        })
-        } finally {
-        setIsSubmitting(false)
-        }
-    }
 
   const responsibilities = [
     "Perform non-invasive body sculpting services such as CryoSlimming, EMSculpting, Thermalift, and more (training provided)",
@@ -136,15 +134,7 @@ const sendEmail = async (emailData: { firstName: string; lastName: string; email
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-        {/* Background */}
-        <div className="absolute inset-0">
-          <img 
-            src="/api/placeholder/1920/1080" 
-            alt="Body Sculpting Career Opportunity" 
-            className="w-full h-full object-cover"
-          />
-          <div className="absolute inset-0 bg-gradient-to-br from-[#8e24aa]/90 via-[#8e24aa]/85 to-[#512da8]/90" />
-        </div>
+        
 
         {/* Animated Elements */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -172,7 +162,7 @@ const sendEmail = async (emailData: { firstName: string; lastName: string; email
         </div>
 
         {/* Hero Content */}
-        <div className="relative z-10 text-center text-white px-4 max-w-6xl mx-auto">
+        <div className="relative z-10 text-center text-[#8e24aa] px-4 max-w-6xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
@@ -201,7 +191,7 @@ const sendEmail = async (emailData: { firstName: string; lastName: string; email
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1, delay: 0.6 }}
-              className="text-xl md:text-2xl font-light leading-relaxed mb-8 max-w-4xl mx-auto text-white/95"
+              className="text-xl md:text-2xl font-light leading-relaxed mb-8 max-w-4xl mx-auto text-[#512da8]"
             >
               Join Maryland's premier body sculpting team and help women transform their confidence with cutting-edge treatments
             </motion.p>
@@ -235,7 +225,7 @@ const sendEmail = async (emailData: { firstName: string; lastName: string; email
             >
               <Button
                 onClick={() => document.getElementById('application-form')?.scrollIntoView({ behavior: 'smooth' })}
-                className="text-white px-12 py-6 text-xl font-bold rounded-2xl shadow-2xl transition-all duration-300 hover:shadow-3xl bg-gradient-to-r from-[#512da8] to-[#7b1fa2] hover:from-[#4527a0] hover:to-[#6a1b9a] border-2 border-white/20"
+                className="text-white px-12 py-6 text-xl font-bold rounded-2xl shadow-2xl transition-all duration-300 hover:shadow-3xl cursor-pointer "
               >
                 <Send className="w-5 h-5 mr-2" />
                 Apply Today

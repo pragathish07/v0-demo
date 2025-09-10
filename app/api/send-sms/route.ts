@@ -1,49 +1,76 @@
-import { NextResponse } from "next/server";
-import { Vonage } from "@vonage/server-sdk";
-import { log } from "console";
+/* import { NextResponse } from "next/server";
+import { PublishCommand } from "@aws-sdk/client-sns";
+import snsClient from "@/lib/snsClient";
 
-const vonage = new Vonage({
-  apiKey: process.env.VONAGE_API_KEY,
-  apiSecret: process.env.VONAGE_API_SECRET,
-});
+export async function POST(req: Request) {
+  try {
+    // Parse form data (even if we don’t use phone from form)
+    const formData = await req.json();
 
-// Define interface for form data
-interface FormData {
-    firstName: string;
-    lastName: string;
-    phone: string;
-    email: string;
-    comments: string;
+    // Always send SMS to *your* verified number in SNS sandbox
+    const params = {
+      Message: `New Application:\nName: ${formData.firstName} ${formData.lastName}\nEmail: ${formData.email}\nPhone: ${formData.phone}\nComments: ${formData.comments}`,
+      PhoneNumber: process.env.MY_VERIFIED_PHONE_NUMBER, 
+      MessageAttributes: {
+        "AWS.SNS.SMS.SMSType": { DataType: "String", StringValue: "Transactional" }
+      }
+    };
+
+    const command = new PublishCommand(params);
+    const response = await snsClient.send(command);
+
+    return NextResponse.json({ success: true, response  });
+  } catch (error: any) {
+    console.error("Error sending SMS:", error);
+    return NextResponse.json(
+      { success: false, error: error.message },
+      { status: 500 }
+    );
+  }
 }
+ */
 
-// Define interface for SMS parameters
-interface SmsParams {
-    to: string;
-    from: string;
-    text: string;
-}
 
-export async function POST(req: Request): Promise<NextResponse> {
-    try {
-            const body = await req.json(); // Parse JSON
-    const { firstName, lastName, email, phone, comments } = body;
-    log(firstName, lastName, email, phone, comments);
-        /* const from = "MD_Body_Sculpting"; // sender ID
-        const to = process.env.MY_PHONE_NUMBER as string;
-        const text = `New Application:
-                    Name: ${firstName} ${lastName}
-                    Phone: ${phone}
-                    Email: ${email}
-                    Comments: ${comments}
-                    type: "text`;
+import client from "@/lib/telnyxClient";
 
-        const smsResponse = await vonage.sms.send({to, from, text}); */
-        console.log('Message sent successfully');
-        //console.log(smsResponse);
+export async function POST(req: Request): Promise<Response> {
+  try {
+    const formData: {
+      firstName: string;
+      lastName: string;
+      email: string;
+      phone: string;
+      comments: string;
+    } = await req.json();
 
-        return NextResponse.json({ success: true, response:  body});
-    } catch (error: any) {
-        console.error("Error sending SMS:", error);
-        return NextResponse.json({ success: false, error: error.message }, { status: 500 });
+    // Build SMS message
+    const messageBody = `New Application:\nName: ${formData.firstName} ${formData.lastName}\nEmail: ${formData.email}\nPhone: ${formData.phone}\nComments: ${formData.comments}`;
+
+    // Check for required environment variables
+    if (!process.env.MY_VERIFIED_PHONE_NUMBER) {
+      throw new Error("MY_VERIFIED_PHONE_NUMBER is not defined in environment variables");
     }
+    
+    if (!process.env.TELNYX_NUMBER) {
+      throw new Error("TELNYX_NUMBER is not defined in environment variables");
+    }
+
+    if (!process.env.TELNYX_MESSAGING_PROFILE_ID) {
+      throw new Error("TELNYX_MESSAGING_PROFILE_ID is not defined in environment variables");
+    }
+    
+    // Send SMS using Telnyx
+    const result = await client.messages.create({
+      from: process.env.TELNYX_NUMBER, // Your Telnyx number in E.164 format
+      to: process.env.MY_VERIFIED_PHONE_NUMBER, // Recipient number in E.164 format
+      text: messageBody,
+      messaging_profile_id: process.env.TELNYX_MESSAGING_PROFILE_ID,
+    } as any); // Type assertion to bypass incorrect type definitions
+
+    return Response.json({ success: true, result });
+  } catch (error: any) {
+    console.error("Error sending SMS:", error);
+    return Response.json({ success: false, error: error }, { status: 500 });
+  }
 }
+

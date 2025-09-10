@@ -239,7 +239,7 @@ export default function HifuLiposonixPage() {
       </section>
 
       {/* Booking Section */}
-      <section className="py-24 bg-gradient-to-br from-[#8e24aa] to-[#512da8]">
+      <section className="py-24 bg-[#8e24aa]">
         <div className="container mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 50 }}

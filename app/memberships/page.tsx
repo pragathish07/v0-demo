@@ -5,7 +5,7 @@ const MembershipPage = () => {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <div className="relative text-white overflow-hidden" style={{backgroundColor: '#8e24aa'}}>
+      <div className="relative text-[#8e24aa] overflow-hidden">
         <div className="relative max-w-7xl mx-auto px-4 py-28 sm:px-6 lg:px-8">
           <div className="text-center">
             
@@ -13,21 +13,23 @@ const MembershipPage = () => {
               Transform Your Body with <br />
               <span>Exclusive Memberships</span>
             </h1>
-            <p className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto text-white">
+            <p className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto text-[#512da8]">
               💎 Get VIP access to premium body sculpting treatments at unbeatable prices.
             </p>
             <div className="flex items-center justify-center gap-2 mb-8">
-              <Calendar className="w-6 h-6" style={{color: '#e1bee7'}} />
-              <p className="text-lg text-white">
+              <Calendar className="w-6 h-6" />
+              <p className="text-lg text-[#512da8] font-semibold">
                 📆 Stay consistent, see results, and enjoy exclusive savings every month!
               </p>
             </div>
+            <a href="#membership-plans" aria-label="Explore Our Membership Plans Below">
             <button 
-              className="font-bold py-4 px-8 rounded-full text-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:bg-[#512da8] hover:text-white"
-              style={{backgroundColor: '#512da8', color: 'white'}}
+              className="cursor-pointer font-bold py-4 px-8 rounded-full text-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:bg-[#512da8] hover:text-white"
+              style={{backgroundColor: '#8e24aa', color: 'white'}}
             >
                Explore Our Membership Plans Below
             </button>
+            </a>
           </div>
         </div>
       </div>
@@ -175,7 +177,7 @@ const MembershipPage = () => {
       </div> */}
 
       {/* Membership Plans Section */}
-      <div className="py-20 bg-white">
+      <div className="py-20 bg-white" id='membership-plans'>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold mb-6" style={{color: '#8e24aa'}}>Membership Plans & Pricing</h2>
