@@ -56,22 +56,7 @@ export function HeroSection() {
               </p>
             </div>
 
-            <div className="flex flex-wrap gap-2 sm:gap-4 animate-fade-in-up delay-900">
-              <Badge
-                variant="secondary"
-                className="px-2 sm:px-4 py-1 sm:py-2 text-xs sm:text-sm font-medium hover:scale-105 transition-transform duration-300 bg-primary/10 text-primary border-primary/20"
-              >
-                <Shield className="w-3 h-3 sm:w-4 sm:h-4 mr-1 sm:mr-2" />
-                FDA-Approved
-              </Badge>
-              <Badge
-                variant="secondary"
-                className="px-2 sm:px-4 py-1 sm:py-2 text-xs sm:text-sm font-medium hover:scale-105 transition-transform duration-300 bg-accent/10 text-accent border-accent/20"
-              >
-                <Award className="w-3 h-3 sm:w-4 sm:h-4 mr-1 sm:mr-2" />
-                Licensed Professionals
-              </Badge>
-            </div>
+            
 
             <div className="flex flex-col gap-3 sm:gap-4 animate-fade-in-up delay-1100">
               <Button
@@ -137,8 +122,8 @@ export function HeroSection() {
 
             <div className="absolute -bottom-3 sm:-bottom-6 -right-3 sm:-right-6 bg-white rounded-xl p-2 sm:p-4 shadow-lg animate-float delay-1000 z-50 hover:shadow-xl transition-shadow duration-300">
               <div className="text-center">
-                <div className="text-lg sm:text-2xl font-bold text-primary animate-pulse">98%</div>
-                <div className="text-xs text-muted-foreground">Success Rate</div>
+                <div className="text-lg sm:text-2xl font-bold text-primary animate-pulse">200+</div>
+                <div className="text-xs text-muted-foreground">Reviews</div>
               </div>
             </div>
 
