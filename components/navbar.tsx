@@ -59,8 +59,8 @@ export function Navbar() {
     { name: "About Us", href: "/about" },
     { name: "Treatments", href: "#services", hasDropdown: true },
     { name: "Membership", href: "/memberships" },
-   /*  { name: "Payment Plans", href: "#payment" }, */
-    { name: "Career", href: "/careers" },
+    { name: "Payment Plans", href: "/payment-plans" },
+    { name: "Careers", href: "/careers" },
   ]
 
   const treatmentServices = [
