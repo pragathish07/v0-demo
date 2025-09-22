@@ -8,6 +8,7 @@ import "./globals.css"
 import { Navbar } from "@/components/navbar"
 import { Footer } from "@/components/footer"
 import { LocationSection } from "@/components/location-section"
+import { SpeedInsights } from "@vercel/speed-insights/next"
 
 const geist = Geist({
   subsets: ["latin"],
@@ -65,6 +66,7 @@ export default function RootLayout({
           <main className="flex-grow">{children}</main>
           <LocationSection />
           <Footer />
+          <SpeedInsights />
       </body>
     </html>
   )

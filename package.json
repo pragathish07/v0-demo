@@ -40,6 +40,7 @@
     "@radix-ui/react-toggle-group": "1.1.1",
     "@radix-ui/react-tooltip": "1.1.6",
     "@types/hls.js": "^0.13.3",
+    "@vercel/speed-insights": "^1.2.0",
     "@vonage/server-sdk": "^3.24.1",
     "autoprefixer": "^10.4.20",
     "class-variance-authority": "^0.7.1",

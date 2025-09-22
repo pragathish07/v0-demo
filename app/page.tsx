@@ -13,6 +13,7 @@ import { LocationSection } from "@/components/location-section"
 import { Footer } from "@/components/footer"
 import { AppPopup } from "@/components/app-popup"
 
+
 export default function HomePage() {
   return (
     <main className="min-h-screen">
