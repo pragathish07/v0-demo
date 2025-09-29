@@ -72,7 +72,10 @@ const handleSubmit = async (e: { preventDefault: () => void }) => {
     const smsResponse = await fetch("/api/send-sms", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(formData),
+      body: JSON.stringify({
+        type: 'contact_inquiry',
+        ...formData
+      }),
     })
 
     const smsResult = await smsResponse.json()
@@ -701,17 +704,19 @@ const handleSubmit = async (e: { preventDefault: () => void }) => {
 
               <div className="space-y-2">
                 <label className="block text-sm font-semibold text-gray-700">
-                  Tell us about yourself (Optional)
+                  Tell us about yourself (Optional - 200 chars max)
                 </label>
                 <textarea
                   name="comments"
                   value={formData.comments}
                   onChange={handleInputChange}
                   disabled={isSubmitting}
+                  maxLength={200}
                   rows={4}
                   className="w-full px-4 py-4 border border-gray-300 rounded-xl focus:ring-2 focus:ring-[#8e24aa] focus:border-transparent transition-all duration-300 bg-white/90 backdrop-blur-sm resize-vertical disabled:opacity-50"
-                  placeholder="Tell us about your experience, why you're interested in this role, and what makes you a great fit for our team..."
+                  placeholder="Brief introduction (200 chars max)..."
                 />
+                <div className="text-xs text-right text-gray-500">{formData.comments.length}/200</div>
               </div>
 
               <motion.div

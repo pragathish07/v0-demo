@@ -12,6 +12,7 @@ import { FaqSection } from "@/components/faq-section"
 import { LocationSection } from "@/components/location-section"
 import { Footer } from "@/components/footer"
 import { AppPopup } from "@/components/app-popup"
+import { ContactFormSection } from "@/components/ContactForm"
 
 
 export default function HomePage() {
@@ -38,6 +39,7 @@ export default function HomePage() {
         <BookAppointmentSection />
       </div>
       <FaqSection />
+      <ContactFormSection/>
       
       
       <AppPopup />

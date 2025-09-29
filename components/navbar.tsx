@@ -61,6 +61,7 @@ export function Navbar() {
     { name: "Membership", href: "/memberships" },
     { name: "Payment Plans", href: "/payment-plans" },
     { name: "Careers", href: "/careers" },
+    { name: "Contact Us", href: "/contact" },
   ]
 
   const treatmentServices = [

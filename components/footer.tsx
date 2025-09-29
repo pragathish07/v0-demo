@@ -5,13 +5,17 @@ import { Facebook, Instagram, Twitter, Youtube, Mail, Phone, MapPin } from "luci
 
 export function Footer() {
   const services = [
-    "Localized Cryotherapy",
-    "Skin Tightening & Anti-Aging",
-    "Fat Reduction & Body Contouring",
-    "HIFU + Liposonix Fat Reduction",
+    { name: "Localized Cryotherapy", href:"/treatments/cryotherapy"  },
+    { name: "Skin Tightening & Anti-Aging", href: "/treatments/skin-tightening-and-anti-aging-treatments" },
+    { name: "Fat Reduction & Body Contouring", href: "/treatments/fat-reduction-and-body-contouring" },
+    { name: "HIFU + Liposonix Fat Reduction", href: "/treatments/hifu-and-liposonix" },
   ]
 
-  const quickLinks = ["About Us", "Our Team", "Before & After Gallery", "Testimonials", "Blog", "Contact Us"]
+  const quickLinks = [
+    { name: "About Us", href: "/about" },
+    { name: "Testimonials", href: "/#testimonials" },
+    { name: "Contact Us", href: "/contact" }
+  ]
 
   return (
     <footer className="px-3 sm:px-6 bg-foreground text-background">
@@ -68,13 +72,13 @@ export function Footer() {
             <div className="space-y-4 sm:space-y-6">
               <h4 className="text-lg sm:text-xl font-semibold">Our Services</h4>
               <ul className="space-y-2 sm:space-y-3">
-                {services.map((service, index) => (
-                  <li key={index}>
-                    <a href="#" className="text-background/80 hover:text-accent transition-colors text-sm sm:text-base">
-                      {service}
-                    </a>
-                  </li>
-                ))}
+              {services.map((service, index) => (
+                <li key={index}>
+                <a href={service.href} className="text-background/80 hover:text-accent transition-colors text-sm sm:text-base">
+                  {service.name}
+                </a>
+                </li>
+              ))}
               </ul>
             </div>
 
@@ -82,13 +86,13 @@ export function Footer() {
             <div className="space-y-4 sm:space-y-6">
               <h4 className="text-lg sm:text-xl font-semibold">Quick Links</h4>
               <ul className="space-y-2 sm:space-y-3">
-                {quickLinks.map((link, index) => (
-                  <li key={index}>
-                    <a href="#" className="text-background/80 hover:text-accent transition-colors text-sm sm:text-base">
-                      {link}
-                    </a>
-                  </li>
-                ))}
+              {quickLinks.map((link, index) => (
+                <li key={index}>
+                <a href={link.href} className="text-background/80 hover:text-accent transition-colors text-sm sm:text-base">
+                  {link.name}
+                </a>
+                </li>
+              ))}
               </ul>
             </div>
 
