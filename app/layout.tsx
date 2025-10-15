@@ -9,6 +9,7 @@ import { Navbar } from "@/components/navbar"
 import { Footer } from "@/components/footer"
 import { LocationSection } from "@/components/location-section"
 import { SpeedInsights } from "@vercel/speed-insights/next"
+import Script from "next/script"
 
 const geist = Geist({
   subsets: ["latin"],
@@ -54,6 +55,12 @@ export default function RootLayout({
       lang="en"
       className={`${geist.variable} ${manrope.variable} ${playfair.variable} ${dancing.variable} antialiased scroll-smooth`}
     >
+      <head>
+        <Script
+          src="https://t.contentsquare.net/uxa/67def8f8dd573.js"
+          strategy="afterInteractive"
+        />
+      </head>
       <body className="font-sans min-h-screen floating-shapes">
         <div className="fixed inset-0 overflow-hidden pointer-events-none z-0">
           <div className="absolute top-20 left-10 w-32 h-32 bg-gradient-to-br from-purple-400/20 to-pink-400/10 rounded-full blur-xl animate-pulse"></div>
