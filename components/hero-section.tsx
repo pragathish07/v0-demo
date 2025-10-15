@@ -64,13 +64,13 @@ export function HeroSection() {
                 className="text-sm sm:text-lg px-6 sm:px-8 py-4 sm:py-6 bg-gradient-to-r from-primary to-accent hover:from-primary/90 hover:to-accent/90 text-white shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 group w-full sm:w-auto"
               >
                 <a
-                  href="https://book.squareup.com/appointments/2eb02510-65db-4773-9466-ebc2bf742d77/location/93THKJBR99KWV/services"
+                  href="https://book.squareup.com/appointments/2eb02510-65db-4773-9466-ebc2bf742d77/location/93THKJBR99KWV/services/JGVHU342FL56EYSJ5AT2QBRW"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center justify-center gap-2"
                 >
-                  <span className="xs:inline">Book Consultation</span>
-                  <span className="xs:hidden">Book Consultation</span>
+                  <span className="xs:inline">Book Complimentary Consult</span>
+                  <span className="xs:hidden">Book Complimentary Consult</span>
                   <Play className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform duration-300" />
                 </a>
               </Button>

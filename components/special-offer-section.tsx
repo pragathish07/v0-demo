@@ -101,7 +101,7 @@ export function SpecialOfferSection() {
                   className="text-xl px-12 py-6 bg-[#8e24aa] hover:bg-[#512da8] text-white w-full transform hover:scale-110 transition-all duration-300 shadow-2xl rounded-2xl font-bold"
                 >
                   <a
-                    href="https://book.squareup.com/appointments/2eb02510-65db-4773-9466-ebc2bf742d77/location/93THKJBR99KWV/services"
+                    href="https://book.squareup.com/appointments/2eb02510-65db-4773-9466-ebc2bf742d77/location/93THKJBR99KWV/services/ZSETUUD2WUGVRI2SWCGIBZIH"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center justify-center gap-3"
