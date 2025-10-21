@@ -14,7 +14,8 @@ export function Footer() {
   const quickLinks = [
     { name: "About Us", href: "/about" },
     { name: "Testimonials", href: "/#testimonials" },
-    { name: "Contact Us", href: "/contact" }
+    { name: "Contact Us", href: "/contact" },
+    { name: "Locations", href: "/locations" }
   ]
 
   return (
@@ -45,6 +46,10 @@ export function Footer() {
                 <div className="flex items-start gap-3">
                   <MapPin className="w-4 h-4 sm:w-5 sm:h-5 text-accent flex-shrink-0 mt-0.5" />
                   <span className="text-background/90 text-sm sm:text-base">3525 Ellicott Mills Dr, Ellicott City, MD 21043, USA</span>
+                </div>
+                <div className="flex items-start gap-3">
+                  <MapPin className="w-4 h-4 sm:w-5 sm:h-5 text-accent flex-shrink-0 mt-0.5" />
+                  <span className="text-background/90 text-sm sm:text-base">Severna Park/Annapolis - Inside RockWell Fitness, 551D Baltimore Annapolis Blvd, Severna Park, MD 21146</span>
                 </div>
               </div>
 

@@ -11,6 +11,9 @@ import { LocationSection } from "@/components/location-section"
 import { SpeedInsights } from "@vercel/speed-insights/next"
 import { Analytics } from "@vercel/analytics/next"
 import Script from "next/script"
+import Banner from "@/components/Banner"
+
+
 
 const geist = Geist({
   subsets: ["latin"],
@@ -71,6 +74,7 @@ export default function RootLayout({
           <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-60 h-60 bg-gradient-to-br from-purple-300/10 to-blue-300/5 rounded-full blur-3xl animate-pulse delay-2000"></div>
         </div>
         <Navbar />
+        <Banner />
           <main className="flex-grow">{children}</main>
           <LocationSection />
           <Footer />

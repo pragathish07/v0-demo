@@ -9,8 +9,11 @@ export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false)
   const [shouldShake, setShouldShake] = useState(false)
   const [isDropdownOpen, setIsDropdownOpen] = useState(false)
+  const [isBookOpen, setIsBookOpen] = useState(false)
   const [isMobileDropdownOpen, setIsMobileDropdownOpen] = useState(false)
+  const [isMobileBookOpen, setIsMobileBookOpen] = useState(false)
   const dropdownRef = useRef<HTMLDivElement>(null)
+  const bookRef = useRef<HTMLDivElement>(null)
   const dropdownTimeout = useRef<ReturnType<typeof setTimeout> | null>(null)
 
   useEffect(() => {
@@ -49,6 +52,9 @@ export function Navbar() {
       if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
         setIsDropdownOpen(false)
       }
+      if (bookRef.current && !bookRef.current.contains(event.target)) {
+        setIsBookOpen(false)
+      }
     }
     document.addEventListener("mousedown", handleClickOutside)
     return () => document.removeEventListener("mousedown", handleClickOutside)
@@ -60,6 +66,7 @@ export function Navbar() {
     { name: "Treatments", href: "#services", hasDropdown: true },
     { name: "Membership", href: "/memberships" },
     { name: "Payment Plans", href: "/payment-plans" },
+    { name: "Locations", href: "/locations" },
     { name: "Careers", href: "/careers" },
     { name: "Contact Us", href: "/contact" },
   ]
@@ -80,7 +87,7 @@ export function Navbar() {
             : "bg-gradient-to-r from-white/10 via-primary/5 to-white/10 backdrop-blur-sm"
         }`}
       >
-        <div className="w-full max-w-7xl mx-auto px-2 sm:px-4 lg:px-6">
+        <div className="container mx-auto px-2 sm:px-4 lg:px-6">
           <div className="flex items-center justify-between h-12 sm:h-16 lg:h-20">
             
             {/* Logo - Compact for mobile */}
@@ -153,23 +160,43 @@ export function Navbar() {
                 <Phone className="w-3 lg:w-4 h-3 lg:h-4 mr-1 lg:mr-2 group-hover:animate-bounce flex-shrink-0" />
                 <span className="font-semibold text-xs lg:text-sm whitespace-nowrap">(410) 505-8595</span>
               </a>
-              <Button
-                asChild
-                className={`bg-[#8e24aa] hover:bg-[#8e24aa] text-white text-xs lg:text-lg px-3 lg:px-8 py-2 lg:py-5 rounded font-bold transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl border-2 border-transparent relative overflow-hidden group ${
-                  shouldShake ? "animate-shake-rotate" : ""
-                }`}
-              >
-                <a
-                  href="https://book.squareup.com/appointments/2eb02510-65db-4773-9466-ebc2bf742d77/location/93THKJBR99KWV/services"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center whitespace-nowrap"
+              <div className="relative" ref={bookRef}>
+                <Button
+                  onClick={() => setIsBookOpen((v) => !v)}
+                  className={`w-fit bg-[#8e24aa] hover:bg-[#8e24aa] text-white text-xs lg:text-lg px-3 lg:px-8 py-2 lg:py-5 rounded font-bold transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl border-2 border-transparent relative overflow-hidden group ${
+                    shouldShake ? "animate-shake-rotate" : ""
+                  }`}
                 >
-                  <Sparkles className="w-3 lg:w-4 h-3 lg:h-4 mr-1 lg:mr-2 animate-pulse flex-shrink-0" />
+                  <Sparkles className="w-3 lg:w-4 h-3 lg:h-4 animate-pulse flex-shrink-0" />
                   <span className="hidden lg:inline">Book Appointment</span>
                   <span className="lg:hidden">Book</span>
-                </a>
-              </Button>
+                  <ChevronDown className={`hidden lg:inline w-2 h-4 transition-transform ${isBookOpen ? "rotate-180" : ""}`} />
+                </Button>
+
+                {/* Booking Dropdown */}
+                <div
+                  className={`absolute right-0 mt-2 w-64 bg-white/95 backdrop-blur-md shadow-2xl rounded-lg border border-primary/20 overflow-hidden z-[120] transition-all duration-200 ${
+                    isBookOpen ? "opacity-100 visible translate-y-0" : "opacity-0 invisible -translate-y-2"
+                  }`}
+                >
+                  <a
+                    href="https://app.squareup.com/appointments/book/2eb02510-65db-4773-9466-ebc2bf742d77/93THKJBR99KWV/start"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block px-4 py-3 text-foreground hover:text-primary hover:bg-primary/10 transition-all duration-200 font-medium text-sm border-b border-primary/10"
+                  >
+                    Ellicott City
+                  </a>
+                  <a
+                    href="https://app.squareup.com/appointments/book/2eb02510-65db-4773-9466-ebc2bf742d77/LW7TDSBXQV87Z/start"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block px-4 py-3 text-foreground hover:text-primary hover:bg-primary/10 transition-all duration-200 font-medium text-sm"
+                  >
+                    Severna Park
+                  </a>
+                </div>
+              </div>
             </div>
 
             {/* Mobile Right Side - Just hamburger menu */}
@@ -235,22 +262,41 @@ export function Navbar() {
                     <Phone className="w-4 h-4 mr-3 flex-shrink-0" />
                     <span className="font-semibold text-base">(410) 505-8595</span>
                   </a>
-                  <Button
-                    asChild
-                    className={`w-full bg-gradient-to-r from-primary to-accent hover:from-primary/90 hover:to-accent/90 text-white py-3 text-base rounded-full font-bold transition-all duration-300 shadow-lg hover:shadow-xl ${
-                      shouldShake ? "animate-shake-rotate" : ""
-                    }`}
-                  >
-                    <a
-                      href="https://book.squareup.com/appointments/2eb02510-65db-4773-9466-ebc2bf742d77/location/93THKJBR99KWV/services"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex items-center justify-center"
+                  {/* Mobile: Book dropdown */}
+                  <div className="w-full">
+                    <Button
+                      onClick={() => setIsMobileBookOpen((v) => !v)}
+                      className={`w-full bg-gradient-to-r from-primary to-accent hover:from-primary/90 hover:to-accent/90 text-white py-3 text-base rounded-full font-bold transition-all duration-300 shadow-lg hover:shadow-xl ${
+                        shouldShake ? "animate-shake-rotate" : ""
+                      }`}
                     >
                       <Sparkles className="w-4 h-4 mr-2 animate-pulse" />
                       Book Appointment
-                    </a>
-                  </Button>
+                      <ChevronDown className={`ml-2 w-4 h-4 transition-transform ${isMobileBookOpen ? "rotate-180" : ""}`} />
+                    </Button>
+                    {isMobileBookOpen && (
+                      <div className="mt-2 space-y-2">
+                        <a
+                          href="https://app.squareup.com/appointments/book/2eb02510-65db-4773-9466-ebc2bf742d77/93THKJBR99KWV/start"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="block w-full text-center px-4 py-3 rounded-lg border-2 border-primary text-primary hover:bg-primary hover:text-white transition-all font-semibold"
+                          onClick={() => setIsOpen(false)}
+                        >
+                          Ellicott City
+                        </a>
+                        <a
+                          href="https://app.squareup.com/appointments/book/2eb02510-65db-4773-9466-ebc2bf742d77/LW7TDSBXQV87Z/start"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="block w-full text-center px-4 py-3 rounded-lg border-2 border-primary text-primary hover:bg-primary hover:text-white transition-all font-semibold"
+                          onClick={() => setIsOpen(false)}
+                        >
+                          Severna Park
+                        </a>
+                      </div>
+                    )}
+                  </div>
                 </div>
               </div>
             </div>
