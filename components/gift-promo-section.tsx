@@ -139,6 +139,13 @@ export function GiftPromoSection() {
                   {/* Special Offer Badge */}
                
 
+                  {/* Quick benefits badges */}
+                  <div className="flex flex-wrap items-center justify-center gap-3 md:gap-4">
+                    <Badge variant="secondary" className="bg-white/10 text-white border-white/20">Instant delivery</Badge>
+                    <Badge variant="secondary" className="bg-white/10 text-white border-white/20">Custom amounts</Badge>
+                    <Badge variant="secondary" className="bg-white/10 text-white border-white/20">No expiration</Badge>
+                  </div>
+
                   {/* CTA Button */}
                   <motion.div
                     initial={{ opacity: 0, y: 20 }}
@@ -149,7 +156,7 @@ export function GiftPromoSection() {
                     <Button
                       size="lg"
                       asChild
-                      className="text-xl px-12 py-6 bg-gradient-to-r from-gold-500 text-white font-bold rounded-2xl shadow-2xl transform hover:scale-110 transition-all duration-300 border-0"
+                      className="text-xl px-12 py-6 bg-gradient-to-r from-gold-500 to-gold-600 text-white font-bold rounded-2xl shadow-2xl transform hover:scale-110 transition-all duration-300 border-0"
                     >
                       <a
                         href="https://app.squareup.com/gift/XWX7PSPHT6V1Z/order"
@@ -175,6 +182,42 @@ export function GiftPromoSection() {
           </motion.div>
         </div>
       </div>
+      {/* Embedded purchase experience */}
+      <div className="container mx-auto px-4 relative z-10 mt-16">
+        <div className="max-w-5xl mx-auto">
+          <div className="flex items-center justify-between gap-3 mb-4">
+            <h3 className="text-white text-xl sm:text-2xl font-bold">Buy a Gift Card Online</h3>
+            <div className="flex items-center gap-3">
+              <span className="hidden sm:inline text-gray-300 text-sm">Secure checkout</span>
+              <a
+                href="https://mdbodysculpting.repeatmd.app/gift-cards/purchase"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-xs sm:text-sm px-3 py-1.5 rounded-full border border-white/20 text-white/90 hover:bg-white/10 transition"
+              >
+                Open Full Page
+              </a>
+            </div>
+          </div>
+          <div className="rounded-2xl overflow-hidden border border-white/10 shadow-2xl bg-white/5 backdrop-blur-sm">
+            <div className="relative w-full h-[82vh] sm:h-[70vh] md:aspect-[16/9] md:h-auto">
+              <iframe
+                src="https://mdbodysculpting.repeatmd.app/gift-cards/purchase"
+                className="absolute inset-0 w-full h-full border-0"
+                style={{ pointerEvents: "auto" }}
+                allow="payment *; clipboard-write; fullscreen"
+                loading="lazy"
+                title="Purchase Gift Card"
+              ></iframe>
+            </div>
+          </div>
+          <p className="text-gray-300 text-xs sm:text-sm mt-3 text-center">
+            Tip: You can scroll inside the window on mobile to see the full checkout.
+          </p>
+        </div>
+      </div>
+
+
     </section>
   )
 }
