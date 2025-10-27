@@ -200,15 +200,15 @@ const sendEmail = async (emailData: {
                   icon: Phone,
                   title: "Phone",
                   content: "(410) 505-8595",
-                  description: "Mon-Fri: 9AM-6PM, Sat: 9AM-4PM",
+                  description: "Monday - Friday: 10AM - 4PM | Saturday And Sunday: By Appointments",
                   link: "tel:+14105058595"
                 },
                 {
                   icon: Mail,
                   title: "Email",
-                  content: "info@marylandbodysculpting.com",
+                  content: "support@mdbodysculpting.com",
                   description: "We'll respond within 24 hours",
-                  link: "mailto:info@marylandbodysculpting.com"
+                  link: "mailto:support@mdbodysculpting.com"
                 },
                 {
                   icon: MapPin,
@@ -218,10 +218,17 @@ const sendEmail = async (emailData: {
                   link: "https://maps.google.com/?q=3525+Ellicott+Mills+Dr,+Ellicott+City,+MD+21043"
                 },
                 {
+                  icon: MapPin,
+                  title: "Location",
+                  content: "Severna Park/Annapolis - Inside RockWell Fitness, 551D Baltimore Annapolis Blvd",
+                  description: "Severna Park, MD 21146, USA",
+                  link: "https://maps.google.com/?q=Severna+Park/Annapolis+-+Inside+RockWell+Fitness,+551D+Baltimore+Annapolis+Blvd"
+                },
+                {
                   icon: Clock,
                   title: "Hours",
-                  content: "Monday - Friday: 9AM - 6PM",
-                  description: "Saturday: 9AM - 4PM • Sunday: Closed",
+                  content: "Monday - Friday: 10AM - 4PM",
+                  description: "Saturday And Sunday: By Appointments • Evening And Early Morning Hours Available : By Appointments",
                   link: null
                 }
               ].map((item, index) => (

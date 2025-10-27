@@ -102,16 +102,16 @@ export function BookAppointmentSection() {
                 <h4 className="font-semibold text-gray-900 mb-3 sm:mb-4 text-sm sm:text-base">Contact Information</h4>
                 <div className="space-y-2 sm:space-y-3">
                   <div className="flex items-center gap-2 sm:gap-3 text-gray-600">
-                    <Phone className="w-4 h-4 sm:w-5 sm:h-5 text-[#8e24aa]" />
+                    <Phone className="shrink-0 w-4 h-4 sm:w-5 sm:h-5 text-[#8e24aa]" />
                     <span className="text-xs sm:text-sm lg:text-base">(410) 505-8595</span>
                   </div>
                   <div className="flex items-start gap-2 sm:gap-3 text-gray-600">
-                    <MapPin className="w-4 h-4 sm:w-5 sm:h-5 text-[#8e24aa] flex-shrink-0 mt-0.5" />
-                    <span className="text-xs sm:text-sm lg:text-base">3525 Ellicott Mills Dr, Ellicott City, MD 21043, USA</span>
+                    <MapPin className="shrink-0 w-4 h-4 sm:w-5 sm:h-5 text-[#8e24aa] mt-0.5" />
+                    <span className="text-xs sm:text-sm lg:text-base">3525 Ellicott Mills Dr, Ellicott City, MD 21043, USA | Severna Park, MD 21146</span>
                   </div>
                   <div className="flex items-center gap-2 sm:gap-3 text-gray-600">
-                    <Clock className="w-4 h-4 sm:w-5 sm:h-5 text-[#8e24aa]" />
-                    <span className="text-xs sm:text-sm lg:text-base">Mon-Fri: 9AM-6PM, Sat: 9AM-4PM</span>
+                    <Clock className="shrink-0 w-4 h-4 sm:w-5 sm:h-5 text-[#8e24aa]" strokeWidth={2.25} />
+                    <span className="text-xs sm:text-sm lg:text-base">Monday - Friday: 10AM - 4PM | Saturday And Sunday: By Appointments | Evening And Early Morning Hours Available : By Appointments</span>
                   </div>
                 </div>
               </CardContent>

@@ -14,9 +14,9 @@ const locations = [
         bookingUrl:
             "https://app.squareup.com/appointments/book/2eb02510-65db-4773-9466-ebc2bf742d77/93THKJBR99KWV/start",
         hours: [
-            { day: "Monday - Friday", time: "9:00 AM - 6:00 PM" },
-            { day: "Saturday", time: "10:00 AM - 4:00 PM" },
-            { day: "Sunday", time: "Closed" }
+            { day: "Monday - Friday", time: "10:00 AM - 4:00 PM" },
+      { day: "Saturday and Sunday", time: "By Appointments" },
+      { day: "Evening & Early Morning", time: "By Appointments" }
         ],
         mapEmbed: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3081.8!2d-76.8!3d39.27!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c81f4c4c4c4c4c%3A0x4c4c4c4c4c4c4c4c!2s3525%20Ellicott%20Mills%20Dr%2C%20Ellicott%20City%2C%20MD%2021043!5e0!3m2!1sen!2sus!4v1234567890",
         directionsUrl: "https://www.google.com/maps/dir/?api=1&destination=3525+Ellicott+Mills+Dr,+Ellicott+City,+MD+21043,+USA"
@@ -30,9 +30,9 @@ const locations = [
         bookingUrl:
             "https://app.squareup.com/appointments/book/2eb02510-65db-4773-9466-ebc2bf742d77/LW7TDSBXQV87Z/start",
         hours: [
-            { day: "Monday - Friday", time: "9:00 AM - 6:00 PM" },
-            { day: "Saturday", time: "10:00 AM - 4:00 PM" },
-            { day: "Sunday", time: "Closed" }
+      { day: "Monday - Friday", time: "10:00 AM - 4:00 PM" },
+      { day: "Saturday and Sunday", time: "By Appointments" },
+      { day: "Evening & Early Morning", time: "By Appointments" }
         ],
         mapEmbed: "https://www.google.com/maps?q=RockWell%20Fitness%2C%20551D%20Baltimore%20Annapolis%20Blvd%2C%20Severna%20Park%2C%20MD%2021146&output=embed",
         directionsUrl: "https://www.google.com/maps/dir/?api=1&destination=Rockwell+Fitness,+551D+Baltimore+Annapolis+Blvd,+Severna+Park,+MD+21146"
