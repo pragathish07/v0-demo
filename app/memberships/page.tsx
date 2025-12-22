@@ -4,12 +4,13 @@ const MembershipPage = () => {
   const memberships = [
     {
       name: "Self Care - Forever Young",
-      price: 175,
+      price: 275,
       description: "Best for Anti-Aging & Skin Tightening",
       ctaUrl: "https://mdbodysculpting.repeatmd.app/pdp/membership/0199b74f-369e-780b-80ac-619b7773a46c",
       commitment: "4 month commitment",
       signupBonus: "$75 off your first month",
       includes: [
+        
         "Thermalift RF Skin Tightening – Stimulate collagen production and improve skin elasticity every month",
         "Priority Booking for Appointments",
         "Exclusive Member Perks & Promotions",
@@ -35,7 +36,7 @@ const MembershipPage = () => {
     },
     {
       name: "Self Care - Body Basics Plus",
-      price: 249,
+      price: 499,
       description: "Best for Fat Reduction & Toning",
       ctaUrl: "https://mdbodysculpting.repeatmd.app/pdp/membership/0199b74f-b4d8-75d4-96d8-a70650b8ebb1",
       commitment: "4 month commitment",
@@ -51,7 +52,7 @@ const MembershipPage = () => {
     },
     {
       name: "Self Care - Body Transformation",
-      price: 349,
+      price: 799,
       description: "Best for Full-Body Results",
       ctaUrl: "https://mdbodysculpting.repeatmd.app/pdp/membership/0199b74e-2efe-75ba-b920-051b01bce576",
       commitment: "4 month commitment",
@@ -67,7 +68,7 @@ const MembershipPage = () => {
     },
     {
       name: "Self Care - Frosted Glow",
-      price: 199,
+      price: 299,
       description: "Best for Cryo Treatments",
       ctaUrl: "hhttps://mdbodysculpting.repeatmd.app/pdp/membership/0199b751-5ea6-72b6-a52b-a2746b83b37f",
       commitment: "4 month commitment",
@@ -82,7 +83,7 @@ const MembershipPage = () => {
     },
     {
       name: "Self Care - Frosted Fit",
-      price: 349,
+      price: 599,
       description: "Best for Advanced Cryo",
       ctaUrl: "https://mdbodysculpting.repeatmd.app/pdp/membership/0199b751-00af-7d2b-82f9-2b776649dd3c",
       commitment: "4 month commitment",
@@ -112,7 +113,7 @@ const MembershipPage = () => {
     },
     {
       name: "Self Care - Frosted Elite",
-      price: 399,
+      price: 799,
       description: "3 Cryo Treatments (60-seconds each) Every Month",
       ctaUrl: "https://mdbodysculpting.repeatmd.app/pdp/membership/0199b750-a98c-7269-b667-13aaee9c0b81",
       commitment: "4 month commitment required",
