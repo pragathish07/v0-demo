@@ -37,8 +37,28 @@ export function ContactFormSection() {
 
 const handleSubmit = async (e: { preventDefault: () => void }) => {
   e.preventDefault();
-  setIsSubmitting(true);
   setSubmitStatus(null);
+
+  // Validate required fields and collect empty ones
+  const emptyFields: string[] = [];
+  
+  if (!formData.firstName.trim()) emptyFields.push('First Name');
+  if (!formData.lastName.trim()) emptyFields.push('Last Name');
+  if (!formData.email.trim()) emptyFields.push('Email');
+  if (!formData.phone.trim()) emptyFields.push('Phone Number');
+  if (!formData.subject.trim()) emptyFields.push('Subject');
+  if (!formData.message.trim()) emptyFields.push('Message');
+
+  if (emptyFields.length > 0) {
+    const fieldList = emptyFields.join(', ');
+    setSubmitStatus({
+      type: 'error',
+      message: `⚠️ Please fill in the following required field${emptyFields.length > 1 ? 's' : ''}: ${fieldList}.`,
+    });
+    return;
+  }
+
+  setIsSubmitting(true);
 
   try {
    
