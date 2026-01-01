@@ -25,7 +25,7 @@ const locations = [
         name: "Severna Park",
         badge: "Opening November 7, 2025",
         isNew: true,
-        address: "Severna Park/Annapolis - Inside RockWell Fitness, 551D Baltimore Annapolis Blvd, Severna Park, MD 21146",
+        address: "Inside River Reach  Shopping Center 770 Ritchie Highway,Suite W25, Severna Park, MD 21146",
         phone: "(443) 741-0762",
         bookingUrl:
             "https://app.squareup.com/appointments/book/2eb02510-65db-4773-9466-ebc2bf742d77/LW7TDSBXQV87Z/start",
@@ -34,8 +34,8 @@ const locations = [
       { day: "Saturday and Sunday", time: "By Appointments" },
       { day: "Evening & Early Morning", time: "By Appointments" }
         ],
-        mapEmbed: "https://www.google.com/maps?q=RockWell%20Fitness%2C%20551D%20Baltimore%20Annapolis%20Blvd%2C%20Severna%20Park%2C%20MD%2021146&output=embed",
-        directionsUrl: "https://www.google.com/maps/dir/?api=1&destination=Rockwell+Fitness,+551D+Baltimore+Annapolis+Blvd,+Severna+Park,+MD+21146"
+    mapEmbed: "https://www.google.com/maps?q=770+Ritchie+Highway,+Suite+W25,+Severna+Park,+MD+21146&output=embed",
+    directionsUrl: "https://www.google.com/maps/dir/?api=1&destination=770+Ritchie+Highway,+Severna+Park,+MD+21146"
 
     }
 ]

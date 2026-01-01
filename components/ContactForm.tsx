@@ -240,9 +240,9 @@ const sendEmail = async (emailData: {
                 {
                   icon: MapPin,
                   title: "Location",
-                  content: "Severna Park/Annapolis - Inside RockWell Fitness, 551D Baltimore Annapolis Blvd",
+                  content: "Inside River Reach  Shopping Center 770 Ritchie Highway,Suite W25, Severna Park, MD 21146",
                   description: "Severna Park, MD 21146, USA",
-                  link: "https://maps.google.com/?q=Severna+Park/Annapolis+-+Inside+RockWell+Fitness,+551D+Baltimore+Annapolis+Blvd"
+                  link: "https://maps.google.com/?q=770+Ritchie+Highway,+Suite+W25,+Severna+Park,+MD+21146"
                 },
                 {
                   icon: Clock,

@@ -11,7 +11,7 @@ export function LocationSection() {
             Visit <span className="text-primary">Us</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-         With locations in Ellicott City and inside RockWell Fitness in Severna Park, our state-of-the-art facilities provide a luxurious and comfortable setting for your transformation journey
+         With locations in Ellicott City and inside Inside River Reach Shopping center in Severna Park, our state-of-the-art facilities provide a luxurious and comfortable setting for your transformation journey
           </p>
         </div>
 
@@ -51,7 +51,7 @@ export function LocationSection() {
               <h3 className="text-lg font-semibold text-foreground">Severna Park / Annapolis</h3>
               <div className="aspect-[4/3] bg-muted rounded-lg overflow-hidden border-2 border-border/50">
                 <iframe
-                  src="https://www.google.com/maps?q=RockWell%20Fitness%2C%20551D%20Baltimore%20Annapolis%20Blvd%2C%20Severna%20Park%2C%20MD%2021146&output=embed"
+                  src="https://www.google.com/maps?q=Inside+River+Reach+Shopping+Center%2C+770+Ritchie+Highway%2C+Suite+W25%2C+Severna+Park%2C+MD+21146&output=embed"
                   width="100%"
                   height="100%"
                   style={{ border: 0 }}
@@ -63,7 +63,7 @@ export function LocationSection() {
               </div>
               <Button size="lg" asChild className="w-full bg-accent hover:bg-accent/90 text-accent-foreground">
                 <a
-                  href="https://www.google.com/maps/dir/?api=1&destination=RockWell+Fitness%2C+551D+Baltimore+Annapolis+Blvd%2C+Severna+Park%2C+MD+21146"
+                  href="https://www.google.com/maps/dir/?api=1&destination=Inside+River+Reach+Shopping+Center%2C+770+Ritchie+Highway%2C+Suite+W25%2C+Severna+Park%2C+MD+21146"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center justify-center"

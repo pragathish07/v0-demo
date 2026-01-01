@@ -5,7 +5,7 @@ import { Star, Sparkles } from "lucide-react"
 function Banner() {
   return (
     <>
-      {/* Announcement Banner */}
+      {/* New Year Sale Banner */}
       <div
         className="relative w-full z-10 overflow-hidden py-3 sm:py-4 mt-12 sm:mt-16 lg:mt-20"
         style={{
@@ -76,24 +76,24 @@ function Banner() {
                     }}
                   ></div>
                   <span className="text-xs sm:text-sm font-bold text-white uppercase tracking-wider">
-                    Grand Opening
+                    New Year Offer
                   </span>
                 </div>
 
                 <span className="text-xs sm:text-sm md:text-base font-semibold text-white inline-flex items-center gap-2">
-                  <span className="text-base sm:text-lg">🎉</span>
+                  <span className="text-base sm:text-lg">✨</span>
                   <span>
-                     New Maryland Body Sculpting location opening inside Rockwell Fitness in Severna Park
+                    Acoustic Wave Therapy — Smooth Cellulite + Lift Skin
                   </span>
                 </span>
 
                 <div
-                  className="inline-flex items-center bg-white rounded-full px-3 py-1.5 sm:px-4 sm:py-2 font-bold text-xs sm:text-sm shadow-lg"
+                  className="inline-flex items-center bg-white text-black rounded-full px-3 py-1.5 sm:px-4 sm:py-2 font-bold text-xs sm:text-sm shadow-lg"
                   style={{
-                    color: "hsl(var(--primary))",
+                    color: "black",
                   }}
                 >
-                  November 7, 2025
+                  Intro Special $249
                 </div>
 
                 <span
@@ -102,8 +102,8 @@ function Banner() {
                     color: "rgba(255, 255, 255, 0.95)",
                   }}
                 >
-                  <span className="text-base sm:text-lg">✨</span>
-                  <span>Now Booking Appointments!</span>
+                  <span className="text-base sm:text-lg">⏰</span>
+                  <span>Limited Time Only!</span>
                 </span>
 
                 <div className="inline-flex items-center gap-1">
@@ -129,22 +129,22 @@ function Banner() {
                   className="w-2 h-2 bg-white rounded-full"
                   style={{ animation: "pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite" }}
                 />
-                <span className="text-xs font-bold uppercase tracking-wider">Grand Opening</span>
+                <span className="text-xs font-bold uppercase tracking-wider">New Year Offer</span>
               </span>
               <span className="text-xs font-semibold text-white text-center">
-                New Maryland Body Sculpting location opening inside Rockwell Fitness in Severna Park
+                Acoustic Wave Therapy — Smooth Cellulite + Lift Skin
               </span>
             </div>
             <div className="flex items-center gap-2 flex-wrap justify-center text-white">
               <span
-                className="inline-flex items-center text-[color:var(--primary)] rounded-full px-3 py-1.5 font-bold text-xs shadow-lg"
-                style={{ color: "hsl(var(--primary))" }}
+                className="inline-flex items-center bg-white text-black rounded-full px-3 py-1.5 font-bold text-xs shadow-lg"
+                style={{ color: "black" }}
               >
-                November 7, 2025
+                Intro Special $249
               </span>
               <span className="text-xs font-medium inline-flex items-center gap-2">
-                <span className="text-base">✨</span>
-                <span>Now Booking Appointments!</span>
+                <span className="text-base">⏰</span>
+                <span>Limited Time Only!</span>
               </span>
               <span className="inline-flex items-center gap-1">
                 <Star className="w-3 h-3 fill-yellow-300 text-yellow-300" />
@@ -181,3 +181,4 @@ function Banner() {
 }
 
 export default Banner
+
