@@ -201,19 +201,40 @@ export function GiftPromoSection() {
           </div>
           <div className="rounded-2xl overflow-hidden border border-white/10 shadow-2xl bg-white/5 backdrop-blur-sm">
             <div className="relative w-full h-[82vh] sm:h-[70vh] md:aspect-[16/9] md:h-auto">
-              <iframe
-                src="https://mdbodysculpting.repeatmd.app/gift-cards/purchase"
-                className="absolute inset-0 w-full h-full border-0"
-                style={{ pointerEvents: "auto" }}
-                allow="payment *; clipboard-write; fullscreen"
-                loading="lazy"
-                title="Purchase Gift Card"
-              ></iframe>
-            </div>
+
+                  
+                  <img
+                    src="/gift-card.png" 
+                    alt="Gift Card Checkout Preview"
+                    className="absolute inset-0 w-full h-full"
+                  />
+
+                  
+                  <div
+                    className="absolute bg-white"
+                    style={{
+                      bottom: "6rem",
+                      left: "6.7rem",
+                      width: "260px",
+                      height: "30px",
+                      borderRadius: "0.75rem",
+                    }}
+                  />
+
+                 
+                  <a
+                    href="https://mdbodysculpting.repeatmd.app/gift-cards/purchase"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="absolute inset-0 z-10"
+                    aria-label="Open secure gift card checkout"
+                  />
+                </div>
+
           </div>
-          <p className="text-gray-300 text-xs sm:text-sm mt-3 text-center">
+          {/* <p className="text-gray-300 text-xs sm:text-sm mt-3 text-center">
             Tip: You can scroll inside the window on mobile to see the full checkout.
-          </p>
+          </p> */}
         </div>
       </div>
 
