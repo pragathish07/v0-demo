@@ -61,8 +61,27 @@ export default function CareersPage() {
 
 const handleSubmit = async (e: { preventDefault: () => void }) => {
   e.preventDefault()
-  setIsSubmitting(true)
   setSubmitStatus(null)
+
+  // Validate required fields and collect empty ones
+  const emptyFields: string[] = [];
+  
+  if (!formData.firstName.trim()) emptyFields.push('First Name');
+  if (!formData.lastName.trim()) emptyFields.push('Last Name');
+  if (!formData.email.trim()) emptyFields.push('Email');
+  if (!formData.phone.trim()) emptyFields.push('Phone Number');
+  if (!formData.comments.trim()) emptyFields.push('Tell us about yourself');
+
+  if (emptyFields.length > 0) {
+    const fieldList = emptyFields.join(', ');
+    setSubmitStatus({
+      type: 'error',
+      message: `Please fill in the following required field${emptyFields.length > 1 ? 's' : ''}: ${fieldList}.`,
+    });
+    return;
+  }
+
+  setIsSubmitting(true)
 
   try {
     // Send Email
@@ -73,7 +92,7 @@ const handleSubmit = async (e: { preventDefault: () => void }) => {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
-        type: 'contact_inquiry',
+        type: 'career_application',
         ...formData
       }),
     })
@@ -704,13 +723,14 @@ const handleSubmit = async (e: { preventDefault: () => void }) => {
 
               <div className="space-y-2">
                 <label className="block text-sm font-semibold text-gray-700">
-                  Tell us about yourself (Optional - 200 chars max)
+                  Tell us about yourself * (200 chars max)
                 </label>
                 <textarea
                   name="comments"
                   value={formData.comments}
                   onChange={handleInputChange}
                   disabled={isSubmitting}
+                  required
                   maxLength={200}
                   rows={4}
                   className="w-full px-4 py-4 border border-gray-300 rounded-xl focus:ring-2 focus:ring-[#8e24aa] focus:border-transparent transition-all duration-300 bg-white/90 backdrop-blur-sm resize-vertical disabled:opacity-50"
