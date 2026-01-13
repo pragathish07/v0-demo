@@ -665,7 +665,6 @@ const handleSubmit = async (e: { preventDefault: () => void }) => {
                     name="firstName"
                     value={formData.firstName}
                     onChange={handleInputChange}
-                    required
                     disabled={isSubmitting}
                     className="w-full px-4 py-4 border border-gray-300 rounded-xl focus:ring-2 focus:ring-[#8e24aa] focus:border-transparent transition-all duration-300 bg-white/90 backdrop-blur-sm disabled:opacity-50"
                     placeholder="Enter your first name"
@@ -680,7 +679,6 @@ const handleSubmit = async (e: { preventDefault: () => void }) => {
                     name="lastName"
                     value={formData.lastName}
                     onChange={handleInputChange}
-                    required
                     disabled={isSubmitting}
                     className="w-full px-4 py-4 border border-gray-300 rounded-xl focus:ring-2 focus:ring-[#8e24aa] focus:border-transparent transition-all duration-300 bg-white/90 backdrop-blur-sm disabled:opacity-50"
                     placeholder="Enter your last name"
@@ -698,7 +696,6 @@ const handleSubmit = async (e: { preventDefault: () => void }) => {
                     name="email"
                     value={formData.email}
                     onChange={handleInputChange}
-                    required
                     disabled={isSubmitting}
                     className="w-full px-4 py-4 border border-gray-300 rounded-xl focus:ring-2 focus:ring-[#8e24aa] focus:border-transparent transition-all duration-300 bg-white/90 backdrop-blur-sm disabled:opacity-50"
                     placeholder="your.email@example.com"
@@ -713,7 +710,6 @@ const handleSubmit = async (e: { preventDefault: () => void }) => {
                     name="phone"
                     value={formData.phone}
                     onChange={handleInputChange}
-                    required
                     disabled={isSubmitting}
                     className="w-full px-4 py-4 border border-gray-300 rounded-xl focus:ring-2 focus:ring-[#8e24aa] focus:border-transparent transition-all duration-300 bg-white/90 backdrop-blur-sm disabled:opacity-50"
                     placeholder="(555) 123-4567"
@@ -730,7 +726,6 @@ const handleSubmit = async (e: { preventDefault: () => void }) => {
                   value={formData.comments}
                   onChange={handleInputChange}
                   disabled={isSubmitting}
-                  required
                   maxLength={200}
                   rows={4}
                   className="w-full px-4 py-4 border border-gray-300 rounded-xl focus:ring-2 focus:ring-[#8e24aa] focus:border-transparent transition-all duration-300 bg-white/90 backdrop-blur-sm resize-vertical disabled:opacity-50"
