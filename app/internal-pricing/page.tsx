@@ -3,7 +3,7 @@
 import { packages } from "@/lib/packages";
 import { QRCodeCanvas } from "qrcode.react";
 import { motion } from "framer-motion";
-import { Copy, ExternalLink, Lock, User, Dumbbell, Star } from "lucide-react";
+import { Copy, ExternalLink, User, Dumbbell, Star } from "lucide-react";
 import { useState } from "react";
 
 export default function InternalPricingPage() {
@@ -124,15 +124,6 @@ export default function InternalPricingPage() {
           transition={{ duration: 0.6 }}
           className="mb-12"
         >
-          <div className="flex items-center gap-3 mb-4">
-            <div className="p-2 bg-[#8e24aa] rounded-xl">
-              <Lock className="w-6 h-6 text-white" />
-            </div>
-            <span className="text-sm font-semibold text-[#8e24aa] bg-[#e1bee7]/50 px-4 py-1 rounded-full">
-              INTERNAL ACCESS ONLY
-            </span>
-          </div>
-          
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#8e24aa] mb-4">
             Tech Pricing Dashboard
           </h1>
@@ -164,17 +155,6 @@ export default function InternalPricingPage() {
           delay={0.6}
         />
 
-        {/* Footer Note */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.6, delay: 0.8 }}
-          className="mt-12 p-6 bg-white/80 backdrop-blur-sm rounded-2xl border border-[#e1bee7]/50 text-center"
-        >
-          <p className="text-gray-500 text-sm">
-            🔒 This page is password protected and for internal staff use only.
-          </p>
-        </motion.div>
       </div>
     </div>
   );
