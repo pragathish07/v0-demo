@@ -8,6 +8,13 @@ import {
 } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { useState } from "react"
+import { 
+  validateFormData, 
+  checkRateLimit, 
+  validateEmail,
+  validatePhoneNumber,
+  validateName 
+} from "@/lib/utils"
 
 export default function CareersPage() {
   const [formData, setFormData] = useState({
@@ -15,7 +22,8 @@ export default function CareersPage() {
     lastName: '',
     email: '',
     phone: '',
-    comments: ''
+    comments: '',
+    honeypot: ''
   })
   const [isSubmitting, setIsSubmitting] = useState(false)
   type SubmitStatusType = null | {
@@ -23,6 +31,7 @@ export default function CareersPage() {
     message: string;
   };
   const [submitStatus, setSubmitStatus] = useState<SubmitStatusType>(null)
+  const [lastSubmitTime, setLastSubmitTime] = useState<number>(0)
 
   const handleInputChange = (e: { target: { name: any; value: any } }) => {
     setFormData({
@@ -63,7 +72,16 @@ const handleSubmit = async (e: { preventDefault: () => void }) => {
   e.preventDefault()
   setSubmitStatus(null)
 
-  // Validate required fields and collect empty ones
+  // Rate limiting check
+  if (!checkRateLimit(formData.email)) {
+    setSubmitStatus({
+      type: 'error',
+      message: 'Too many submissions. Please try again in a minute.',
+    })
+    return
+  }
+
+  // Basic client-side validation
   const emptyFields: string[] = [];
   
   if (!formData.firstName.trim()) emptyFields.push('First Name');
@@ -77,6 +95,24 @@ const handleSubmit = async (e: { preventDefault: () => void }) => {
     setSubmitStatus({
       type: 'error',
       message: `Please fill in the following required field${emptyFields.length > 1 ? 's' : ''}: ${fieldList}.`,
+    });
+    return;
+  }
+
+  // Comprehensive validation
+  const validation = validateFormData({
+    firstName: formData.firstName,
+    lastName: formData.lastName,
+    email: formData.email,
+    phone: formData.phone,
+    comments: formData.comments,
+    honeypot: formData.honeypot
+  })
+
+  if (!validation.valid) {
+    setSubmitStatus({
+      type: 'error',
+      message: validation.errors[0] || 'Invalid form data. Please check your input.',
     });
     return;
   }
@@ -114,7 +150,9 @@ const handleSubmit = async (e: { preventDefault: () => void }) => {
         email: "",
         phone: "",
         comments: "",
+        honeypot: ""
       })
+      setLastSubmitTime(Date.now())
     } else {
       setSubmitStatus({
         type: "error",
@@ -655,6 +693,17 @@ const handleSubmit = async (e: { preventDefault: () => void }) => {
             )}
 
             <form onSubmit={handleSubmit} className="space-y-6">
+              {/* Hidden honeypot field for bot protection */}
+              <input
+                type="text"
+                name="honeypot"
+                value={formData.honeypot}
+                onChange={handleInputChange}
+                style={{ display: 'none' }}
+                tabIndex={-1}
+                autoComplete="off"
+              />
+
               <div className="grid md:grid-cols-2 gap-6">
                 <div className="space-y-2">
                   <label className="block text-sm font-semibold text-gray-700">
@@ -731,7 +780,7 @@ const handleSubmit = async (e: { preventDefault: () => void }) => {
                   className="w-full px-4 py-4 border border-gray-300 rounded-xl focus:ring-2 focus:ring-[#8e24aa] focus:border-transparent transition-all duration-300 bg-white/90 backdrop-blur-sm resize-vertical disabled:opacity-50"
                   placeholder="Brief introduction (200 chars max)..."
                 />
-                <div className="text-xs text-right text-gray-500">{formData.comments.length}/200</div>
+              <div className="text-xs text-right text-gray-500">{formData.comments.length}/200</div>
               </div>
 
               <motion.div

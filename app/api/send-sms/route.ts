@@ -1,9 +1,36 @@
 import client from "@/lib/telnyxClient";
 import { NextRequest } from "next/server";
+import { 
+  validateEmail, 
+  validatePhoneNumber, 
+  validateName,
+  checkSpamPatterns,
+  validateFormData 
+} from "@/lib/utils";
 
 export async function POST(req: NextRequest): Promise<Response> {
   try {
     const formData = await req.json();
+
+    // Server-side validation (critical!)
+    const validation = validateFormData({
+      firstName: formData.firstName || '',
+      lastName: formData.lastName || '',
+      email: formData.email || '',
+      phone: formData.phone || '',
+      comments: formData.comments || '',
+      subject: formData.subject || '',
+      message: formData.message || '',
+      honeypot: formData.honeypot || ''
+    });
+
+    if (!validation.valid) {
+      console.warn(`[SPAM DETECTED] Validation failed:`, validation.errors, formData);
+      return Response.json({ 
+        success: false, 
+        error: 'Invalid submission' 
+      }, { status: 400 });
+    }
 
     // Fallback if "type" is missing
     const formType = formData.type || "contact_inquiry";

@@ -9,6 +9,7 @@ import {
   User, CheckCircle, Loader2, AlertCircle 
 } from "lucide-react"
 import { useState } from "react"
+import { validateFormData, checkRateLimit } from "@/lib/utils"
 
 export function ContactFormSection() {
   const [formData, setFormData] = useState({
@@ -17,7 +18,8 @@ export function ContactFormSection() {
     email: '',
     phone: '',
     subject: '',
-    message: ''
+    message: '',
+    honeypot: ''
   })
   const [isSubmitting, setIsSubmitting] = useState(false)
   
@@ -39,6 +41,15 @@ const handleSubmit = async (e: { preventDefault: () => void }) => {
   e.preventDefault();
   setSubmitStatus(null);
 
+  // Rate limiting check
+  if (!checkRateLimit(formData.email)) {
+    setSubmitStatus({
+      type: 'error',
+      message: 'Too many submissions. Please try again in a minute.',
+    });
+    return;
+  }
+
   // Validate required fields and collect empty ones
   const emptyFields: string[] = [];
   
@@ -54,6 +65,25 @@ const handleSubmit = async (e: { preventDefault: () => void }) => {
     setSubmitStatus({
       type: 'error',
       message: `⚠️ Please fill in the following required field${emptyFields.length > 1 ? 's' : ''}: ${fieldList}.`,
+    });
+    return;
+  }
+
+  // Comprehensive validation
+  const validation = validateFormData({
+    firstName: formData.firstName,
+    lastName: formData.lastName,
+    email: formData.email,
+    phone: formData.phone,
+    subject: formData.subject,
+    message: formData.message,
+    honeypot: formData.honeypot
+  });
+
+  if (!validation.valid) {
+    setSubmitStatus({
+      type: 'error',
+      message: validation.errors[0] || 'Invalid form data. Please check your input.',
     });
     return;
   }
@@ -96,6 +126,7 @@ const handleSubmit = async (e: { preventDefault: () => void }) => {
         phone: '',
         subject: '',
         message: '',
+        honeypot: ''
       });
     } else {
       setSubmitStatus({
@@ -356,6 +387,17 @@ const sendEmail = async (emailData: {
                 )}
 
                 <div className="space-y-6">
+                  {/* Hidden honeypot field for bot protection */}
+                  <input
+                    type="text"
+                    name="honeypot"
+                    value={formData.honeypot}
+                    onChange={handleInputChange}
+                    style={{ display: 'none' }}
+                    tabIndex={-1}
+                    autoComplete="off"
+                  />
+
                   <div className="grid sm:grid-cols-2 gap-6">
                     <div className="space-y-2">
                       <label className="block text-sm font-semibold text-gray-700">
