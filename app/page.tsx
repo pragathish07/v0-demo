@@ -1,48 +1,54 @@
-import { Navbar } from "@/components/navbar"
 import { HeroSection } from "@/components/hero-section"
+import { ProblemSection } from "@/components/problem-section"
+import { WhoItsForSection } from "@/components/who-its-for-section"
 import { SpecialOfferSection } from "@/components/special-offer-section"
-import { ServicesSection } from "@/components/services-section"
 import { ResultsGallery } from "@/components/results-gallery"
 import { TestimonialsSection } from "@/components/testimonials-section"
-import { AboutUsSection } from "@/components/about-us-section"
-import { AppPromotionSection } from "@/components/app-promotion-section"
-import { GiftPromoSection } from "@/components/gift-promo-section"
-import { BookAppointmentSection } from "@/components/book-appointment-section"
+import { HowItWorksSection } from "@/components/how-it-works-section"
+import { BenefitsSection } from "@/components/benefits-section"
+import { WhyChooseUsSection } from "@/components/why-choose-us-section"
 import { FaqSection } from "@/components/faq-section"
-import { LocationSection } from "@/components/location-section"
-import { Footer } from "@/components/footer"
-import { AppPopup } from "@/components/app-popup"
-import { ContactFormSection } from "@/components/ContactForm"
+import { FinalCtaSection } from "@/components/final-cta-section"
+import { StickyMobileCta } from "@/components/sticky-mobile-cta"
 
 
 export default function HomePage() {
   return (
     <main className="min-h-screen">
-     
+      {/* Above the fold */}
       <div id="home">
         <HeroSection />
       </div>
+
+      {/* High on the page — emotional connection & qualification */}
+      <ProblemSection />
+      <WhoItsForSection />
+
+      {/* Signature offer */}
       <SpecialOfferSection />
-      <div id="services">
-        <ServicesSection />
-      </div>
+
+      {/* Social proof */}
       {/* <ResultsGallery /> */}
-      <TestimonialsSection />
-      <div id="about">
-        <AboutUsSection />
+      <div id="testimonials">
+        <TestimonialsSection />
       </div>
-      <div id="membership">
-        <AppPromotionSection />
-      </div>
-      <GiftPromoSection />
-      <div id="payment">
-        <BookAppointmentSection />
-      </div>
+
+      {/* Process & benefits */}
+      <HowItWorksSection />
+      <BenefitsSection />
+
+      {/* Trust & differentiation */}
+      <WhyChooseUsSection />
+
+      {/* FAQ */}
       <FaqSection />
-      <ContactFormSection/>
-      
-      
-      <AppPopup />
+
+      {/* Final CTA */}
+      <FinalCtaSection />
+
+      {/* Mobile sticky CTA */}
+      <StickyMobileCta />
     </main>
   )
 }
+ 

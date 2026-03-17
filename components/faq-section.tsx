@@ -5,44 +5,34 @@ import { MessageCircle } from "lucide-react"
 export function FaqSection() {
   const faqs = [
     {
-      question: "Is the treatment safe and FDA-approved?",
+      question: "Is body sculpting a weight-loss treatment?",
       answer:
-        "Yes, all our treatments use FDA-approved technology and are performed by licensed professionals. Our non-surgical body sculpting treatments have been extensively tested for safety and efficacy. We follow strict safety protocols and conduct thorough consultations to ensure each treatment is appropriate for your individual needs.",
+        "Body sculpting is not a weight-loss program. It is designed to help improve contour, shape, tone, and targeted stubborn areas.",
     },
     {
-      question: "How many sessions do I need?",
+      question: "How many sessions will I need?",
       answer:
-        "The number of sessions varies depending on your goals, the treatment type, and your body's response. Most clients see optimal results with 3-6 sessions spaced 2-4 weeks apart. During your free consultation, we'll create a personalized treatment plan that outlines the recommended number of sessions for your specific goals.",
+        "That depends on your body, the area being treated, and your goals. We build a personalized recommendation during your consultation.",
     },
     {
-      question: "What results can I expect?",
+      question: "Is there downtime?",
       answer:
-        "Results vary by individual, but most clients see a reduction of 1-3 inches per treatment area and noticeable skin tightening. Some clients see immediate results after the first session, with continued improvement over 2-3 months as your body naturally eliminates the treated fat cells. We'll show you before/after photos during your consultation to set realistic expectations.",
+        "No. One of the biggest benefits of non-surgical body sculpting is that there is no downtime.",
     },
     {
-      question: "Is there any downtime?",
+      question: "When will I see results?",
       answer:
-        "No, there's no downtime required! Our non-surgical treatments allow you to return to your normal activities immediately. You may experience mild redness or tingling in the treated area, which typically resolves within a few hours. This is why our treatments are perfect for busy professionals and parents.",
+        "Some clients notice changes sooner, while others see progress gradually over a series of sessions. Your treatment plan and consistency matter.",
     },
     {
-      question: "How much do treatments cost?",
+      question: "Does it hurt?",
       answer:
-        "Treatment costs vary depending on the specific procedure and treatment area. Our introductory Mommy Tummy Rescue treatment starts at $249 (regularly $849). We offer package deals for multiple sessions and flexible payment plans to make treatments affordable. During your free consultation, we'll provide detailed pricing for your personalized treatment plan.",
+        "Most clients find treatments very manageable. We explain what to expect before getting started.",
     },
     {
-      question: "Do you offer payment plans?",
+      question: "How do I know which treatment is right for me?",
       answer:
-        "Yes! We offer flexible payment options including interest-free payment plans, monthly installments, and package deals. We accept cash, credit cards, and work with financing partners to make your transformation affordable. Our team will discuss all payment options during your consultation to find what works best for your budget.",
-    },
-    {
-      question: "What's included in the free consultation?",
-      answer:
-        "Your free consultation includes a comprehensive body assessment, discussion of your goals, explanation of recommended treatments, before/after photo review, and a personalized treatment plan with pricing. There's no pressure to book - we want you to feel completely informed and comfortable with your decision. The consultation takes about 30-45 minutes.",
-    },
-    {
-      question: "How long do results last?",
-      answer:
-        "Results are long-lasting because the treatments actually destroy fat cells, which are then naturally eliminated by your body. Once fat cells are gone, they don't regenerate. However, maintaining a healthy lifestyle is important to prevent remaining fat cells from expanding. Most clients enjoy their results for years with proper maintenance.",
+        "That is exactly what the consultation is for. We help guide you to the right plan based on your body and concerns.",
     },
   ]
 
@@ -53,9 +43,6 @@ export function FaqSection() {
           <h2 className="text-3xl md:text-4xl font-bold text-foreground">
             Frequently Asked <span className="text-primary">Questions</span>
           </h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Get answers to the most common questions about our body sculpting treatments and what to expect.
-          </p>
         </div>
 
         <div className="max-w-4xl mx-auto">
@@ -77,9 +64,20 @@ export function FaqSection() {
           </Accordion>
 
           <div className="text-center mt-12">
-            <Button size="lg" className="px-8 py-6 text-lg bg-primary hover:bg-primary/90">
-              <MessageCircle className="w-5 h-5 mr-2" />
-              Still Have Questions? Contact Us
+            <Button
+              size="lg"
+              asChild
+              className="px-8 py-6 text-lg bg-primary hover:bg-primary/90"
+            >
+              <a
+                href="https://book.squareup.com/appointments/2eb02510-65db-4773-9466-ebc2bf742d77/location/93THKJBR99KWV/services/JGVHU342FL56EYSJ5AT2QBRW"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-center gap-2"
+              >
+                <MessageCircle className="w-5 h-5" />
+                Still Have Questions? Book a Consultation
+              </a>
             </Button>
           </div>
         </div>

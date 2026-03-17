@@ -3,9 +3,9 @@
 import { useState, useEffect } from "react"
 import { Card, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
+import { Avatar, AvatarFallback } from "@/components/ui/avatar"
 import { Badge } from "@/components/ui/badge"
-import { Star, Quote, ExternalLink } from "lucide-react"
+import { Star, Quote, Sparkles } from "lucide-react"
 
 export function TestimonialsSection() {
   const [currentTestimonial, setCurrentTestimonial] = useState(0)
@@ -23,7 +23,7 @@ export function TestimonialsSection() {
     {
       id: 2,
       name: "Tina Tran Steinhardt",
-      location: "Maryland", 
+      location: "Maryland",
       treatment: "Personalized Body Sculpting",
       rating: 5,
       review: "I had an incredible experience with Maryland Body Sculpting. From the moment I walked in, Karen made me feel so comfortable and at ease. She genuinely cares about finding treatments that are tailored to your personal goals, and she took the time to explain everything thoroughly.",
@@ -64,7 +64,7 @@ export function TestimonialsSection() {
       rating: 5,
       review: "This was such an enjoyable experience. The staff is enthusiastic and truly supportive as soon as you arrive for your appointment. I cannot complement enough. 5 stars + My facial was flawless. I am looking forward to returning soon.",
       date: "6 months ago",
-    }
+    },
   ]
 
   // Auto-rotate testimonials every 5 seconds
@@ -79,13 +79,10 @@ export function TestimonialsSection() {
     <section className="py-8 sm:py-16 px-3 sm:px-4 bg-background" id="testimonials">
       <div className="container mx-auto px-2 sm:px-4">
         <div className="text-center space-y-3 sm:space-y-4 mb-8 sm:mb-12">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground">
-            What Our <span className="text-primary">Happy Clients</span> Say
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground max-w-3xl mx-auto">
+            Loved by Women Who Wanted a Real Plan —{" "}
+            <span className="text-primary">Not Empty Promises</span>
           </h2>
-          <p className="text-base sm:text-xl text-muted-foreground max-w-2xl mx-auto px-2">
-            Don't just take our word for it. Read real reviews from clients who have transformed their bodies with our
-            treatments.
-          </p>
 
           {/* Google Rating Display */}
           <div className="flex items-center justify-center gap-3 sm:gap-4 mt-6 sm:mt-8">
@@ -120,7 +117,9 @@ export function TestimonialsSection() {
                     </AvatarFallback>
                   </Avatar>
                   <div>
-                    <h3 className="text-lg sm:text-xl font-semibold text-foreground">{testimonials[currentTestimonial].name}</h3>
+                    <h3 className="text-lg sm:text-xl font-semibold text-foreground">
+                      {testimonials[currentTestimonial].name}
+                    </h3>
                     <p className="text-muted-foreground text-sm sm:text-base">
                       {testimonials[currentTestimonial].location}
                     </p>
@@ -136,7 +135,9 @@ export function TestimonialsSection() {
                     {[...Array(testimonials[currentTestimonial].rating)].map((_, i) => (
                       <Star key={i} className="w-4 h-4 sm:w-5 sm:h-5 fill-accent text-accent" />
                     ))}
-                    <span className="text-xs sm:text-sm text-muted-foreground ml-2">{testimonials[currentTestimonial].date}</span>
+                    <span className="text-xs sm:text-sm text-muted-foreground ml-2">
+                      {testimonials[currentTestimonial].date}
+                    </span>
                   </div>
 
                   <div className="relative">
@@ -156,13 +157,13 @@ export function TestimonialsSection() {
             </CardContent>
           </Card>
 
-          {/* Testimonial Navigation Dots - Smaller on mobile */}
+          {/* Testimonial Navigation Dots */}
           <div className="flex justify-center gap-2 mt-4 sm:mt-6">
             {testimonials.map((_, index) => (
               <button
                 key={index}
                 onClick={() => setCurrentTestimonial(index)}
-                className={`w-1 h-1 sm:w-1 sm:h-1 rounded-full transition-all duration-300 ${
+                className={`w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full transition-all duration-300 ${
                   index === currentTestimonial ? "bg-primary scale-125" : "bg-muted hover:bg-primary/50"
                 }`}
               />
@@ -172,7 +173,7 @@ export function TestimonialsSection() {
 
         {/* Additional Reviews Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 mb-8 sm:mb-12">
-          {testimonials.slice(0, 3).map((testimonial, index) => (
+          {testimonials.slice(0, 3).map((testimonial) => (
             <Card key={testimonial.id} className="border border-border/50 hover:border-primary/30 transition-colors">
               <CardContent className="p-4 sm:p-6">
                 <div className="space-y-3 sm:space-y-4">
@@ -194,7 +195,9 @@ export function TestimonialsSection() {
                       </div>
                     </div>
                   </div>
-                  <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed line-clamp-3 sm:line-clamp-4">{testimonial.review}</p>
+                  <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed line-clamp-3 sm:line-clamp-4">
+                    {testimonial.review}
+                  </p>
                   <Badge variant="outline" className="text-xs">
                     {testimonial.treatment}
                   </Badge>
@@ -206,10 +209,20 @@ export function TestimonialsSection() {
 
         {/* CTA */}
         <div className="text-center">
-          <Button size="lg" variant="outline" className="px-6 sm:px-8 py-4 sm:py-6 text-sm sm:text-lg bg-transparent w-full sm:w-auto">
-            <ExternalLink className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
-            <span className="sm:inline">Read More Reviews on Google</span>
-            <span className="sm:hidden">More Reviews</span>
+          <Button
+            size="lg"
+            asChild
+            className="px-6 sm:px-8 py-4 sm:py-6 text-sm sm:text-lg bg-primary hover:bg-primary/90 text-white w-full sm:w-auto"
+          >
+            <a
+              href="https://book.squareup.com/appointments/2eb02510-65db-4773-9466-ebc2bf742d77/location/93THKJBR99KWV/services/JGVHU342FL56EYSJ5AT2QBRW"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center justify-center gap-2"
+            >
+              <Sparkles className="w-4 h-4 sm:w-5 sm:h-5" />
+              Book My Free Consultation
+            </a>
           </Button>
         </div>
       </div>

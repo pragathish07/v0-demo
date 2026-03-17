@@ -40,9 +40,9 @@ const dancing = Dancing_Script({
 })
 
 export const metadata: Metadata = {
-  title: "Transform Your Body - Maryland Body Sculpting Clinic",
+  title: "Non-Surgical Body Sculpting — Maryland Body Sculpting | Ellicott City & Severna Park",
   description:
-    "Advanced non-surgical body contouring treatments. FDA-approved, safe, and effective. Book your free consultation today.",
+    "Helping women tighten loose skin, contour stubborn areas, smooth cellulite, and feel confident — without surgery and no downtime. 2 Maryland locations. Book your free consultation.",
   icons: {
     icon: "/logo.webp",
   }
