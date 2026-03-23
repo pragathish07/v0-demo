@@ -125,12 +125,12 @@ export default function InternalPricingPage() {
           className="mb-12"
         >
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#8e24aa] mb-4">
-            Tech Pricing Dashboard
+            2026 Package Pricing
           </h1>
           
-          <p className="text-lg text-gray-600 max-w-2xl">
+         {/*  <p className="text-lg text-gray-600 max-w-2xl">
             Quick access to all package checkout links and QR codes. Click to open checkout or copy the link for customers.
-          </p>
+          </p> */}
         </motion.div>
 
         {/* Package Sections */}
