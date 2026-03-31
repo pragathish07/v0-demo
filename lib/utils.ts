@@ -103,12 +103,12 @@ export const checkSpamPatterns = (text: string): boolean => {
   if (!text) return false
   
   const spamPatterns = [
-    /[a-z]{15,}/i, // Long sequences of letters (reduced from 20)
+    /[a-z]{25,}/i, // Very long unbroken letter sequences are suspicious
     /[0-9]{15,}/, // Long sequences of numbers
     /(.)(\1){5,}/, // Repeated characters (reduced from 10)
     /http[s]?:\/\//, // URLs
     /viagra|cialis|casino|lottery|prize|bitcoin|crypto|forex|investment|loan|credit/i,
-    /[A-Z][a-z][A-Z][a-z][A-Z]/i, // Alternating case pattern (CaMeL)
+    /[A-Z][a-z][A-Z][a-z][A-Z]/, // Alternating case pattern (CaMeL)
   ]
   
   if (spamPatterns.some(pattern => pattern.test(text))) return true
