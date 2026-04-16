@@ -45,8 +45,8 @@ export function GiftPromoSection() {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="inline-flex items-center gap-2 bg-gradient-to-r from-gold-100/20 to-yellow-100/20 backdrop-blur-sm px-6 py-3 rounded-full mb-6 border border-gold-300/30"
             >
-              <Gift className="w-5 h-5 text-gold-400" />
-              <span className="text-gold-300 font-medium">Perfect Gift</span>
+              <Gift className="w-5 h-5 text-gold-400 text-white" />
+              <span className="text-gold-300 font-medium text-white">Perfect Gift</span>
             </motion.div>
 
             <h2 className="font-display text-5xl md:text-6xl font-bold mb-6 text-white">
@@ -97,14 +97,14 @@ export function GiftPromoSection() {
                       transition={{ duration: 4, repeat: Number.POSITIVE_INFINITY, ease: "linear" }}
                       className="absolute -top-2 -right-2"
                     >
-                      <Sparkles className="w-6 h-6 text-gold-300" />
+                      <Sparkles className="w-6 h-6 text-gold-300 text-white" />
                     </motion.div>
                     <motion.div
                       animate={{ rotate: -360 }}
                       transition={{ duration: 6, repeat: Number.POSITIVE_INFINITY, ease: "linear" }}
                       className="absolute -bottom-2 -left-2"
                     >
-                      <Star className="w-5 h-5 text-gold-400" />
+                      <Star className="w-5 h-5 text-gold-400 text-white" />
                     </motion.div>
                   </motion.div>
 

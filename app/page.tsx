@@ -10,6 +10,7 @@ import { WhyChooseUsSection } from "@/components/why-choose-us-section"
 import { FaqSection } from "@/components/faq-section"
 import { FinalCtaSection } from "@/components/final-cta-section"
 import { StickyMobileCta } from "@/components/sticky-mobile-cta"
+import { GiftPromoSection } from "@/components/gift-promo-section"
 
 
 export default function HomePage() {
@@ -39,7 +40,7 @@ export default function HomePage() {
 
       {/* Trust & differentiation */}
       <WhyChooseUsSection />
-
+      <GiftPromoSection />
       {/* FAQ */}
       <FaqSection />
 
