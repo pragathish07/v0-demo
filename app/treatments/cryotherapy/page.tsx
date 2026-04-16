@@ -4,6 +4,7 @@ import { motion } from "framer-motion"
 import { Snowflake, Zap, Heart, Shield, Clock, Calendar, ExternalLink, CheckCircle } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import head from "next/head"
+import { AgelessPreviewPromo } from "@/components/ageless-preview-promo"
 
 export default function CryotherapyPage() {
   const wellnessBenefits = [
@@ -95,6 +96,8 @@ export default function CryotherapyPage() {
           </motion.div>
         </div>
       </section>
+
+      <AgelessPreviewPromo variant="banner" className="bg-white" />
 
       {/* Faster Recovery Section */}
       <section className="py-24 bg-white">

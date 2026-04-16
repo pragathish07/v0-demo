@@ -3,6 +3,7 @@
 import { motion } from "framer-motion"
 import { Sparkles, Zap, Heart, Shield, Clock, Calendar, ExternalLink, CheckCircle } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import { AgelessPreviewPromo } from "@/components/ageless-preview-promo"
 
 export default function SkinTighteningPage() {
   const wellnessBenefits = [
@@ -92,6 +93,8 @@ export default function SkinTighteningPage() {
           </motion.div>
         </div>
       </section>
+
+      <AgelessPreviewPromo variant="banner" className="bg-white" />
 
       {/* Enhanced Skin Rejuvenation Section */}
       <section className="py-24 bg-white">

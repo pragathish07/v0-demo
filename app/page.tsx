@@ -11,6 +11,8 @@ import { FaqSection } from "@/components/faq-section"
 import { FinalCtaSection } from "@/components/final-cta-section"
 import { StickyMobileCta } from "@/components/sticky-mobile-cta"
 import { GiftPromoSection } from "@/components/gift-promo-section"
+import { AgelessPreviewPromo } from "@/components/ageless-preview-promo"
+import { AGELESS_PREVIEW_URL } from "@/lib/ageless-preview"
 
 
 export default function HomePage() {
@@ -21,6 +23,18 @@ export default function HomePage() {
         <HeroSection />
       </div>
 
+     
+
+      <section id="ageless-preview" className="border-y border-[#8e24aa]/15 bg-[#f3e5f5]/45">
+        <div className="container mx-auto px-4 pt-8 sm:pt-10">
+          
+          <h2 className="mt-2 text-2xl sm:text-3xl font-bold text-[#512da8]">
+            Preview Your Results In Seconds!
+          </h2>
+        </div>
+        <AgelessPreviewPromo variant="card" className="pt-5 sm:pt-6" />
+      </section>
+
       {/* High on the page — emotional connection & qualification */}
       <ProblemSection />
       <WhoItsForSection />
@@ -28,6 +42,22 @@ export default function HomePage() {
       {/* Signature offer */}
       <SpecialOfferSection />
 
+ <section id="treatment-quiz" className="bg-[#8e24aa] py-10 sm:py-12">
+        <div className="container mx-auto px-4 ">
+          <div className="rounded-2xl border border-white/20 bg-white/10 backdrop-blur-sm p-6 sm:p-8 text-white flex flex-col items-center text-center">
+            <p className="text-xl sm:text-2xl font-medium">Not sure which treatment is right for you?</p>
+            <p className="mt-2 text-xl sm:text-2xl font-medium">Answer a few quick questions and get matched to your top options.</p>
+            <a
+              href={AGELESS_PREVIEW_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex mt-6 items-center justify-center rounded-md bg-white px-6 py-3 text-sm sm:text-base font-semibold text-[#6a1b9a] hover:bg-[#f3e5f5] transition-colors"
+            >
+              Start the Quiz
+            </a>
+          </div>
+        </div>
+      </section>
       {/* Social proof */}
       {/* <ResultsGallery /> */}
       <div id="testimonials">

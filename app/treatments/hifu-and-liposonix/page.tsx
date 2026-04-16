@@ -3,6 +3,7 @@
 import { motion } from "framer-motion"
 import { Zap, Heart, Shield, Clock, Calendar, ExternalLink, CheckCircle, Target, Users } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import { AgelessPreviewPromo } from "@/components/ageless-preview-promo"
 
 export default function HifuLiposonixPage() {
   const benefits = [
@@ -84,6 +85,8 @@ export default function HifuLiposonixPage() {
           </motion.div>
         </div>
       </section>
+
+      <AgelessPreviewPromo variant="banner" className="bg-white" />
 
       {/* Target Stubborn Fat Section */}
       <section className="py-24 bg-white">

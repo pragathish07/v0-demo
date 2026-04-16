@@ -1,9 +1,9 @@
 "use client"
 
 import { Button } from "@/components/ui/button"
+import { AGELESS_PREVIEW_LABEL, AGELESS_PREVIEW_URL } from "@/lib/ageless-preview"
 import { Star, Play, MapPin, Clock, Award } from "lucide-react"
 import { useEffect, useRef } from "react"
-import Link from "next/link"
 
 export function HeroSection() {
   const heroRef = useRef<HTMLElement>(null)
@@ -71,15 +71,21 @@ export function HeroSection() {
                     <Play className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform duration-300" />
                   </a>
                 </Button>
-                {/* <Link href="#before-afters" scroll={true}>
-                  <Button
-                    variant="outline"
-                    size="lg"
-                    className="text-sm sm:text-lg px-6 sm:px-8 py-4 sm:py-6 bg-transparent border-2 border-primary text-primary hover:bg-primary hover:text-white transition-all duration-300 hover:scale-105 w-full sm:w-auto"
+                <Button
+                  variant="outline"
+                  size="lg"
+                  asChild
+                  className="text-sm sm:text-lg px-6 sm:px-8 py-4 sm:py-6 bg-white/90 border-2 border-primary text-primary hover:bg-primary hover:text-white transition-all duration-300 hover:scale-105 w-full sm:w-auto"
+                >
+                  <a
+                    href={AGELESS_PREVIEW_URL}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center justify-center gap-2"
                   >
-                    See Before & Afters
-                  </Button>
-                </Link> */}
+                    <span>{AGELESS_PREVIEW_LABEL}</span>
+                  </a>
+                </Button>
               </div>
 
               {/* Trust Bar */}
