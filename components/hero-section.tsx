@@ -2,30 +2,12 @@
 
 import { Button } from "@/components/ui/button"
 import { AGELESS_PREVIEW_LABEL, AGELESS_PREVIEW_URL } from "@/lib/ageless-preview"
-import { Star, Play, MapPin, Clock, Award } from "lucide-react"
-import { useEffect, useRef } from "react"
+import { Star, Play, MapPin, Clock, Award, Sparkles, ArrowRight } from "lucide-react"
 
 export function HeroSection() {
-  const heroRef = useRef<HTMLElement>(null)
-  const imageRef = useRef<HTMLDivElement>(null)
-
-  useEffect(() => {
-    const handleScroll = () => {
-      if (heroRef.current && imageRef.current) {
-        const scrolled = window.pageYOffset
-        const parallax = scrolled * 0.5
-        imageRef.current.style.transform = `translateY(${parallax}px)`
-      }
-    }
-
-    window.addEventListener("scroll", handleScroll)
-    return () => window.removeEventListener("scroll", handleScroll)
-  }, [])
-
   return (
     <>
       <section
-        ref={heroRef}
         className="px-3 sm:px-6 relative min-h-screen flex items-center overflow-hidden pt-8 lg:pt-8"
       >
         <div className="absolute inset-0 overflow-hidden z-0">
@@ -119,41 +101,44 @@ export function HeroSection() {
               </div>
             </div>
 
-            <div className="relative animate-fade-in-right delay-600 z-30 mt-8 lg:mt-0" ref={imageRef}>
-              {/* Main hero image */}
-              <div className="relative z-40 rounded-2xl overflow-hidden shadow-2xl transform hover:scale-105 transition-transform duration-700">
-                <img
-                  src="/elegant-spa-woman.png"
-                  alt="Confident woman after body sculpting treatment"
-                  className="w-full h-[300px] sm:h-[400px] lg:h-[600px] object-cover"
-                />
-                <div className="absolute inset-0 bg-primary/10"></div>
-              </div>
+            <div className="relative animate-fade-in-right delay-600 z-30 mt-8 lg:mt-0">
+              <div className="relative overflow-hidden rounded-3xl border border-primary/20 bg-white shadow-2xl p-5 sm:p-7 lg:p-8">
+                <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-primary/5"></div>
 
-              <div className="absolute -top-3 sm:-top-6 -left-3 sm:-left-6 bg-white rounded-xl p-2 sm:p-4 shadow-lg animate-float z-50 hover:shadow-xl transition-shadow duration-300">
-                <div className="flex items-center gap-1 sm:gap-2">
-                  <div className="w-2 h-2 sm:w-3 sm:h-3 bg-green-500 rounded-full animate-pulse"></div>
-                  <span className="text-xs sm:text-sm font-medium">No Surgery Required</span>
-                </div>
-              </div>
-
-              <div className="absolute -bottom-3 sm:-bottom-6 -right-3 sm:-right-6 bg-white rounded-xl p-2 sm:p-4 shadow-lg animate-float delay-1000 z-50 hover:shadow-xl transition-shadow duration-300">
-                <div className="text-center">
-                  <div className="text-lg sm:text-2xl font-bold text-primary animate-pulse">200+</div>
-                  <div className="text-xs text-muted-foreground">5-Star Reviews</div>
-                </div>
-              </div>
-
-              <div className="absolute top-2 sm:top-4 right-2 sm:right-4 bg-white/90 backdrop-blur-sm rounded-lg p-2 sm:p-3 shadow-lg animate-fade-in delay-1500 z-50 hover:bg-white transition-colors duration-300">
-                <div className="flex gap-1 sm:gap-2">
-                  <div className="w-8 h-10 sm:w-12 sm:h-16 bg-muted rounded overflow-hidden transform hover:scale-110 transition-transform duration-300">
-                    <img src="/woman-before-sculpting.png" alt="Before" className="w-full h-full object-cover" />
+                <div className="relative z-10">
+                  <div className="inline-flex items-center gap-1.5 rounded-full bg-primary/10 px-3 py-1.5 text-xs font-semibold uppercase tracking-[0.1em] text-primary">
+                    <Sparkles className="w-3.5 h-3.5" />
+                    AI Treatment Match
                   </div>
-                  <div className="w-8 h-10 sm:w-12 sm:h-16 bg-muted rounded overflow-hidden transform hover:scale-110 transition-transform duration-300">
-                    <img src="/woman-after-contouring.png" alt="After" className="w-full h-full object-cover" />
+
+                  <h3 className="mt-4 text-2xl sm:text-3xl font-bold text-foreground leading-tight">
+                    Get matched to your best treatment plan.
+                  </h3>
+
+                  <p className="mt-3 text-sm sm:text-base text-muted-foreground leading-relaxed">
+                    Use our smart quiz to compare options for fat reduction, skin tightening, and post-pregnancy contouring.
+                  </p>
+
+                  <div className="mt-5 rounded-2xl overflow-hidden border border-primary/20 shadow-lg">
+                    <img
+                      src="/before-after-face.jpg"
+                      alt="Before and after face treatment preview"
+                      className="w-full h-72 sm:h-80 lg:h-[28rem] object-cover"
+                    />
                   </div>
+
+                  <div className="mt-3 flex items-center justify-between text-xs sm:text-sm">
+                    <span className="font-semibold text-primary">See what&apos;s possible before booking</span>
+                    <span className="text-muted-foreground">Realistic AI preview</span>
+                  </div>
+
+                  <Button asChild size="lg" className="mt-6 w-full bg-primary hover:bg-primary/90 text-white">
+                    <a href={AGELESS_PREVIEW_URL} target="_blank" rel="noopener noreferrer">
+                      Start the Quiz
+                      <ArrowRight className="w-4 h-4" />
+                    </a>
+                  </Button>
                 </div>
-                <div className="text-xs text-center mt-1 font-medium">Real Results</div>
               </div>
             </div>
           </div>
