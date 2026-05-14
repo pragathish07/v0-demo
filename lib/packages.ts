@@ -6,7 +6,7 @@ export const packages = {
     { name: "15 Pack Face", url: "https://buy.stripe.com/3cI6oIbcU7q3cf07y48og07", price: "$2,999" },
   ],
   body: [
-    { name: "5 Pack Body", url: "https://buy.stripe.com/3cI6oIbcU7q3cf07y48og07", price: "$1,799" },
+    { name: "5 Pack Body", url: "https://buy.stripe.com/7sYcN63Ks9ybdj48C88og06", price: "$1,799" },
     { name: "10 Pack Body", url: "https://buy.stripe.com/5kQ14o94M39Ngvg6u08og00", price: "$2,999" },
     
   ],
